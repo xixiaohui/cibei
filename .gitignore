@@ -42,3 +42,8 @@ doc.md
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# test artifacts (playwright MCP, screenshots, snapshots)
+.playwright-mcp/
+*-screenshot.png
+*-snapshot.yml
