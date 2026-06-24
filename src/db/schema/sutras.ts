@@ -11,3 +11,5 @@ export const sutras = pgTable("sutras", {
   category: text("category"),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
 });
+
+export type Sutra = typeof sutras.$inferSelect;
