@@ -2,9 +2,9 @@
 
 ## Project
 
-Name: Cebei Space
+Name: Cibei Space
 
-Domain: cebei.space
+Domain: cibei.space
 
 Slogan:
 
@@ -18,7 +18,7 @@ English:
 
 # Product Vision
 
-Cebei Space 是一个现代化佛学研究与学习平台。
+Cibei Space 是一个现代化佛学研究与学习平台。
 
 平台不以宗教宣传为目标，而以：
 
