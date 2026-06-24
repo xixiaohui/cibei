@@ -17,6 +17,8 @@ interface SutraDetailPageProps {
 
 export async function generateMetadata({ params }: SutraDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
+  // Validate slug format — only allow lowercase letters, digits, and hyphens
+  if (!/^[a-z0-9-]+$/.test(slug)) return { title: "未找到" };
   const sutra = await getSutraBySlug(slug);
   if (!sutra) return { title: "未找到" };
 
@@ -30,6 +32,8 @@ export async function generateMetadata({ params }: SutraDetailPageProps): Promis
 
 export default async function SutraDetailPage({ params }: SutraDetailPageProps) {
   const { slug } = await params;
+  // Validate slug format — only allow lowercase letters, digits, and hyphens
+  if (!/^[a-z0-9-]+$/.test(slug)) notFound();
   const sutra = await getSutraBySlug(slug);
   if (!sutra) notFound();
 

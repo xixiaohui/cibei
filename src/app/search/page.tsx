@@ -26,30 +26,96 @@ interface SearchPageProps {
 }
 
 async function SearchResults({ q, type }: { q: string; type?: string }) {
-  const params = new URLSearchParams({ q });
-  if (type) params.set("type", type);
+  // Search directly against the database instead of via HTTP
+  const { db } = await import("@/db");
+  const { sutras } = await import("@/db/schema/sutras");
+  const { glossary } = await import("@/db/schema/glossary");
+  const { encyclopedia } = await import("@/db/schema/encyclopedia");
+  const { or, ilike, sql } = await import("drizzle-orm");
 
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
-  let results: SearchResult[] = [];
-  let error: string | null = null;
+  const results: SearchResult[] = [];
 
-  try {
-    const res = await fetch(`${baseUrl}/api/search?${params.toString()}`, {
-      cache: "no-store",
-    });
-    const data = await res.json();
-    results = data.results;
-  } catch {
-    error = "搜索服务暂不可用，请稍后再试。";
+  // Search sutras
+  if (!type || type === "sutras") {
+    const rows = await db
+      .select({
+        slug: sutras.slug,
+        title: sutras.title,
+        excerpt: sutras.summary,
+        category: sutras.category,
+      })
+      .from(sutras)
+      .where(
+        or(
+          ilike(sutras.title, `%${q}%`),
+          ilike(sutras.summary, `%${q}%`),
+        ),
+      )
+      .limit(10);
+    results.push(
+      ...rows.map((s) => ({
+        type: "sutra" as const,
+        slug: s.slug,
+        title: s.title,
+        excerpt: s.excerpt ?? "",
+        category: s.category,
+      })),
+    );
   }
 
-  if (error) {
-    return (
-      <EmptyState
-        icon={<Search className="h-12 w-12" />}
-        title="搜索出错"
-        description={error}
-      />
+  // Search glossary
+  if (!type || type === "glossary") {
+    const rows = await db
+      .select({
+        slug: glossary.slug,
+        title: glossary.term,
+        excerpt: glossary.definition,
+        category: sql<string | null>`NULL`,
+      })
+      .from(glossary)
+      .where(
+        or(
+          ilike(glossary.term, `%${q}%`),
+          ilike(glossary.definition, `%${q}%`),
+        ),
+      )
+      .limit(10);
+    results.push(
+      ...rows.map((g) => ({
+        type: "glossary" as const,
+        slug: g.slug,
+        title: g.title,
+        excerpt: g.excerpt.slice(0, 200),
+        category: null,
+      })),
+    );
+  }
+
+  // Search encyclopedia
+  if (!type || type === "encyclopedia") {
+    const rows = await db
+      .select({
+        slug: encyclopedia.slug,
+        title: encyclopedia.title,
+        excerpt: encyclopedia.content,
+        category: encyclopedia.category,
+      })
+      .from(encyclopedia)
+      .where(
+        or(
+          ilike(encyclopedia.title, `%${q}%`),
+          ilike(encyclopedia.content, `%${q}%`),
+        ),
+      )
+      .limit(10);
+    results.push(
+      ...rows.map((e) => ({
+        type: "encyclopedia" as const,
+        slug: e.slug,
+        title: e.title,
+        excerpt: e.excerpt.slice(0, 200),
+        category: e.category,
+      })),
     );
   }
 
