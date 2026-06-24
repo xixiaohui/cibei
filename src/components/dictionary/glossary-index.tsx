@@ -5,6 +5,9 @@ import { useRouter, useSearchParams } from "next/navigation";
 // Chinese doesn't have A-Z — use common initial characters
 const INDEX_LETTERS = [
   "般", "菩", "空", "缘", "涅", "禅", "法", "佛", "无", "如",
+  "五", "四", "八", "十", "三", "六", "苦", "真", "大", "方",
+  "不", "中", "波", "布", "持", "忍", "精", "止", "回", "供",
+  "念", "烦", "业", "轮", "解", "阿", "声", "善", "功", "凡", "诸",
 ];
 
 export function GlossaryIndex({ activeLetter }: { activeLetter?: string }) {
