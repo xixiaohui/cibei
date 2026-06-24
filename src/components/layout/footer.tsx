@@ -28,7 +28,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-border text-center text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} 慈悲空间 Cebei Space. 仅限学术研究与学习用途。
+          &copy; {new Date().getFullYear()} 慈悲空间 Cibei Space. 仅限学术研究与学习用途。
         </div>
       </div>
     </footer>
