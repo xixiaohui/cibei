@@ -1,0 +1,78 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "慈悲空间" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e5]
+        - generic [ref=e7]: 慈悲空间
+      - navigation [ref=e8]:
+        - link "经典库" [ref=e9] [cursor=pointer]:
+          - /url: /sutras
+        - link "词典" [ref=e10] [cursor=pointer]:
+          - /url: /dictionary
+        - link "百科" [ref=e11] [cursor=pointer]:
+          - /url: /encyclopedia
+      - generic [ref=e12]:
+        - generic [ref=e14]:
+          - img [ref=e15]
+          - searchbox "搜索经典、术语、百科..." [ref=e18]
+        - link "登录" [ref=e19] [cursor=pointer]:
+          - /url: /auth/login
+          - button "登录" [ref=e20]
+  - main [ref=e21]:
+    - generic [ref=e22]:
+      - navigation "面包屑导航" [ref=e23]:
+        - list [ref=e24]:
+          - listitem [ref=e25]:
+            - link "首页" [ref=e26] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e27]:
+            - img [ref=e28]
+            - generic [ref=e30]: 经典库
+      - generic [ref=e31]:
+        - heading "经典库" [level=1] [ref=e32]
+        - paragraph [ref=e33]: 深入经藏，智慧如海。浏览大乘佛教核心经典，阅读原文，对比版本。
+      - generic [ref=e34]:
+        - generic [ref=e35] [cursor=pointer]: 全部
+        - generic [ref=e36] [cursor=pointer]: 华严部
+        - generic [ref=e37] [cursor=pointer]: 法华部
+        - generic [ref=e38] [cursor=pointer]: 禅宗部
+        - generic [ref=e39] [cursor=pointer]: 净土部
+        - generic [ref=e40] [cursor=pointer]: 密教部
+        - generic [ref=e41] [cursor=pointer]: 般若部
+        - generic [ref=e42] [cursor=pointer]: 经集部
+      - link "维摩诘所说经 经集部 姚秦 · 鸠摩罗什译 《维摩诘经》以在家居士维摩诘为主角，阐扬大乘佛教的不二法门。" [ref=e84] [cursor=pointer]:
+        - /url: /sutras/vimalakirti-sutra
+        - generic [ref=e86]:
+          - generic [ref=e87]:
+            - generic [ref=e88]: 维摩诘所说经
+            - generic [ref=e89]: 经集部
+          - generic [ref=e90]: 姚秦 · 鸠摩罗什译
+          - paragraph [ref=e91]: 《维摩诘经》以在家居士维摩诘为主角，阐扬大乘佛教的不二法门。
+  - contentinfo [ref=e108]:
+    - generic [ref=e109]:
+      - generic [ref=e110]:
+        - generic [ref=e111]:
+          - heading "慈悲空间" [level=3] [ref=e112]
+          - paragraph [ref=e113]:
+            - text: 深入经藏，智慧如海。
+            - text: 现代佛学研究与经典学习平台。
+        - generic [ref=e114]:
+          - heading "探索" [level=3] [ref=e115]
+          - list [ref=e116]:
+            - listitem [ref=e117]:
+              - link "经典库" [ref=e118] [cursor=pointer]:
+                - /url: /sutras
+            - listitem [ref=e119]:
+              - link "佛学词典" [ref=e120] [cursor=pointer]:
+                - /url: /dictionary
+            - listitem [ref=e121]:
+              - link "百科" [ref=e122] [cursor=pointer]:
+                - /url: /encyclopedia
+        - generic [ref=e123]:
+          - heading "关于" [level=3] [ref=e124]
+          - paragraph [ref=e125]: 本站内容仅供学术研究与学习参考，不替代法师指导与宗教实践。
+      - generic [ref=e126]: © 2026 慈悲空间 Cebei Space. 仅限学术研究与学习用途。
+  - button "Open Next.js Dev Tools" [ref=e132] [cursor=pointer]:
+    - img [ref=e133]
+  - alert [ref=e136]
