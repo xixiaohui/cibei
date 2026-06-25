@@ -44,9 +44,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:pr-4">
             <Link href="/" className="inline-block mb-5">
-              <span className="text-xl font-semibold tracking-tight text-accent font-[family-name:var(--font-serif)]">
-                慈悲空间
-              </span>
+              <img src="/logo.png" alt="慈悲空间" className="h-17 w-auto" />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               深入经藏，智慧如海。

@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { SearchBar } from "./search-bar";
 import { Button } from "@/components/ui/button";
 import { useSession, signOut } from "@/lib/auth-client";
@@ -29,12 +29,10 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 shrink-0 group"
+            className="flex items-center gap-2.5 shrink-0 group"
             onClick={closeMenu}
           >
-            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-accent/10 group-hover:bg-accent/15 transition-colors">
-              <BookOpen className="h-4 w-4 text-accent" />
-            </div>
+            <img src="/logo.png" alt="慈悲空间" className="h-7 w-auto" />
             <span className="text-lg font-semibold tracking-tight font-[family-name:var(--font-serif)]">
               慈悲空间
             </span>
