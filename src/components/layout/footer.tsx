@@ -1,34 +1,129 @@
 import Link from "next/link";
+import { ExternalLink } from "lucide-react";
+
+const internalLinks = [
+  { href: "/sutras", label: "经典库" },
+  { href: "/stories", label: "佛经故事" },
+  { href: "/dictionary", label: "佛学词典" },
+  { href: "/encyclopedia", label: "百科" },
+];
+
+const externalLinks = [
+  {
+    href: "https://cbetaonline.dila.edu.tw",
+    label: "CBETA 中华电子佛典",
+    desc: "最完整的汉文大藏经数字化",
+  },
+  {
+    href: "https://21dzk.l.u-tokyo.ac.jp/SAT/",
+    label: "SAT 大正藏数据库",
+    desc: "东京大学大藏经全文检索",
+  },
+  {
+    href: "https://www.buddhistdigitalresourcecenter.org",
+    label: "BDRC 佛教数字资源中心",
+    desc: "藏梵文献数字化与开放获取",
+  },
+  {
+    href: "https://plato.stanford.edu/search.html?q=buddha",
+    label: "Stanford Encyclopedia",
+    desc: "权威的佛学哲学英文学术条目",
+  },
+  {
+    href: "https://en.wikipedia.org/wiki/Buddhism",
+    label: "Wikipedia · Buddhism Portal",
+    desc: "开放的佛学知识百科全书",
+  },
+];
 
 export function Footer() {
   return (
-    <footer className="border-t border-border mt-auto">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="text-sm font-semibold mb-3">慈悲空间</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              深入经藏，智慧如海。<br />
-              现代佛学研究与经典学习平台。
+    <footer className="border-t border-border/50 mt-auto">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
+          {/* Brand */}
+          <div className="lg:pr-4">
+            <Link href="/" className="inline-block mb-5">
+              <span className="text-xl font-semibold tracking-tight text-accent font-[family-name:var(--font-serif)]">
+                慈悲空间
+              </span>
+            </Link>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+              深入经藏，智慧如海。
+            </p>
+            <p className="text-xs text-muted-foreground/60 leading-relaxed">
+              现代佛学研究与经典学习平台
             </p>
           </div>
+
+          {/* Content modules */}
           <div>
-            <h3 className="text-sm font-semibold mb-3">探索</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/sutras" className="hover:text-foreground transition-colors">经典库</Link></li>
-              <li><Link href="/dictionary" className="hover:text-foreground transition-colors">佛学词典</Link></li>
-              <li><Link href="/encyclopedia" className="hover:text-foreground transition-colors">百科</Link></li>
+            <h4 className="text-xs font-semibold text-muted-foreground/70 uppercase tracking-widest mb-6">
+              探索
+            </h4>
+            <ul className="space-y-3.5">
+              {internalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
+
+          {/* External resources */}
           <div>
-            <h3 className="text-sm font-semibold mb-3">关于</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <h4 className="text-xs font-semibold text-muted-foreground/70 uppercase tracking-widest mb-6">
+              外链推荐
+            </h4>
+            <ul className="space-y-4">
+              {externalLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block"
+                  >
+                    <span className="inline-flex items-center gap-1 text-sm text-muted-foreground group-hover:text-foreground transition-colors leading-snug">
+                      {link.label}
+                      <ExternalLink className="h-3 w-3 shrink-0 opacity-40 group-hover:opacity-70 transition-opacity" />
+                    </span>
+                    <span className="block text-xs text-muted-foreground/50 mt-0.5 leading-snug">
+                      {link.desc}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* About */}
+          <div>
+            <h4 className="text-xs font-semibold text-muted-foreground/70 uppercase tracking-widest mb-6">
+              关于
+            </h4>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               本站内容仅供学术研究与学习参考，不替代法师指导与宗教实践。
+            </p>
+            <p className="text-xs text-muted-foreground/50 leading-relaxed">
+              禁止宗教攻击、门派攻击、迷信宣传、算命占卜、招财改运等内容。
             </p>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-border text-center text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} 慈悲空间 Cibei Space. 仅限学术研究与学习用途。
+
+        {/* Bottom bar */}
+        <div className="mt-14 pt-8 border-t border-border/30 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-muted-foreground/40">
+            &copy; {new Date().getFullYear()} 慈悲空间 Cibei Space — 仅限学术研究与学习用途
+          </p>
+          <p className="text-xs text-muted-foreground/30">
+            cibei.space
+          </p>
         </div>
       </div>
     </footer>
