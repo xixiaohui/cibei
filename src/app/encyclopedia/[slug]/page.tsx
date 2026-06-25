@@ -3,6 +3,7 @@ import { getEncyclopediaBySlug } from "@/lib/encyclopedia";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { ProseReader } from "@/components/shared/prose-reader";
 import { ShareButton } from "@/components/shared/share-button";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
@@ -54,13 +55,11 @@ export default async function EncyclopediaDetailPage({ params }: EncyclopediaDet
       <Separator className="mb-10" />
 
       {/* Content */}
-      <div className="prose prose-neutral max-w-none">
-        {entry.content.split("\n").map((paragraph, i) => (
-          paragraph.trim() ? (
-            <p key={i} className="text-lg leading-relaxed mb-4">{paragraph}</p>
-          ) : null
-        ))}
-      </div>
+      <ProseReader>
+        {entry.content.split("\n").map((paragraph, i) =>
+          paragraph.trim() ? <p key={i}>{paragraph}</p> : null
+        )}
+      </ProseReader>
     </div>
   );
 }

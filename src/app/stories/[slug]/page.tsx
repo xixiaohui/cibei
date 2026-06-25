@@ -4,6 +4,7 @@ import { getStoryBySlug } from "@/lib/stories";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { ProseReader } from "@/components/shared/prose-reader";
 import { ShareButton } from "@/components/shared/share-button";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
@@ -61,15 +62,11 @@ export default async function StoryDetailPage({ params }: StoryDetailPageProps) 
       <Separator className="mb-10" />
 
       {/* Story Content */}
-      <div className="prose prose-neutral max-w-none">
+      <ProseReader>
         {story.content.split("\n").map((paragraph, i) =>
-          paragraph.trim() ? (
-            <p key={i} className="text-lg leading-relaxed mb-4">
-              {paragraph}
-            </p>
-          ) : null
+          paragraph.trim() ? <p key={i}>{paragraph}</p> : null
         )}
-      </div>
+      </ProseReader>
 
       {/* Moral / Lesson */}
       {story.moral && (

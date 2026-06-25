@@ -3,6 +3,7 @@ import { getGlossaryBySlug, getAllGlossaryTerms } from "@/lib/glossary";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { RelatedTerms } from "@/components/dictionary/related-terms";
 import { Separator } from "@/components/ui/separator";
+import { ProseReader } from "@/components/shared/prose-reader";
 import { ShareButton } from "@/components/shared/share-button";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
@@ -59,9 +60,9 @@ export default async function GlossaryDetailPage({ params }: GlossaryDetailPageP
       <Separator className="mb-10" />
 
       {/* Definition */}
-      <div className="prose prose-neutral max-w-none">
-        <p className="text-lg leading-relaxed">{term.definition}</p>
-      </div>
+      <ProseReader>
+        <p>{term.definition}</p>
+      </ProseReader>
 
       {/* Related Terms */}
       <RelatedTerms
