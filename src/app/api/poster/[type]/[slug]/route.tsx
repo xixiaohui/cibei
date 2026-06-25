@@ -140,19 +140,47 @@ export async function GET(
   if (!fontPromise) fontPromise = loadFont();
   const fontData = await fontPromise;
 
-  // Render body text — split into paragraphs
-  const bodyParagraphs = data.body
+  // Clean body text: strip MDX markdown syntax, normalize whitespace
+  const cleanBody = data.body
+    .replace(/^#{1,3}\s+/gm, "")   // strip heading markers
+    .replace(/\*\*([^*]+)\*\*/g, "$1") // bold
+    .replace(/\*([^*]+)\*/g, "$1")     // italic
+    .replace(/^>\s+/gm, "")         // blockquote
+    .replace(/`([^`]+)`/g, "$1")    // inline code
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") // links → text only
+    .replace(/\n{3,}/g, "\n\n")     // collapse excessive newlines
+    .trim();
+
+  // Split into paragraphs, filter empty/single-char lines
+  const bodyParagraphs = cleanBody
     .split("\n")
     .map((p) => p.trim())
-    .filter(Boolean);
+    .filter((p) => p.length > 2);
+
+  // Limit total visible chars for balanced whitespace
+  const MAX_PARAGRAPHS = 7;
+  const MAX_CHARS_PER_PARAGRAPH = 72; // ~3 lines at 24 chars/line
+  const MAX_TOTAL_CHARS = 400;
+
+  let totalChars = 0;
+  const visibleParagraphs: string[] = [];
+  for (const p of bodyParagraphs) {
+    if (visibleParagraphs.length >= MAX_PARAGRAPHS) break;
+    const truncated = p.length > MAX_CHARS_PER_PARAGRAPH
+      ? p.slice(0, MAX_CHARS_PER_PARAGRAPH) + "…"
+      : p;
+    totalChars += truncated.length;
+    if (totalChars > MAX_TOTAL_CHARS) break;
+    visibleParagraphs.push(truncated);
+  }
+  const hasMore = visibleParagraphs.length < bodyParagraphs.length || totalChars >= MAX_TOTAL_CHARS;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const ImgResponse = ImageResponse as any;
 
   const W = 800;
   const H = 1280;
-  const PX = 64; // horizontal padding
-  const MAX_CHARS_PER_LINE = 28; // approximate for Chinese text
+  const PX = 72; // horizontal padding — generous whitespace
 
   return new ImgResponse(
     (
@@ -272,32 +300,31 @@ export async function GET(
           style={{
             display: "flex",
             flexDirection: "column",
-            padding: `40px ${PX}px`,
+            padding: `48px ${PX}px`,
             flex: 1,
+            gap: 20,
           }}
         >
-          {bodyParagraphs.slice(0, 10).map((p, i) => (
+          {visibleParagraphs.map((p, i) => (
             <p
               key={i}
               style={{
-                fontSize: 22,
+                fontSize: 21,
                 color: "#44403c",
                 lineHeight: 2.0,
-                marginBottom: 16,
                 maxWidth: W - PX * 2,
               }}
             >
-              {p.length > MAX_CHARS_PER_LINE * 3
-                ? p.slice(0, MAX_CHARS_PER_LINE * 3) + "…"
-                : p}
+              {p}
             </p>
           ))}
-          {bodyParagraphs.length > 10 && (
+          {hasMore && (
             <p
               style={{
-                fontSize: 20,
+                fontSize: 18,
                 color: "#a8a29e",
                 lineHeight: 2.0,
+                marginTop: 8,
               }}
             >
               … 更多内容请访问 cibei.space
