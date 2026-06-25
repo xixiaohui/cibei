@@ -11,6 +11,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "鸠摩罗什",
       summary: "《金刚经》是大乘佛教般若部重要经典，主要阐述'空'的智慧，强调不应执着于任何相状，以般若智慧照见诸法实相。",
       category: "般若部",
+      cbetaId: "T0235",
+      satId: "T0235",
     },
     {
       slug: "heart-sutra",
@@ -20,6 +22,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "玄奘",
       summary: "《心经》是般若经的精要，以'照见五蕴皆空'为核心，是流传最广的佛经之一。",
       category: "般若部",
+      cbetaId: "T0251",
+      satId: "T0251",
     },
     {
       slug: "lotus-sutra",
@@ -29,6 +33,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "鸠摩罗什",
       summary: "《法华经》是大乘佛教的重要经典，主张一切众生皆可成佛，开权显实、会三归一。",
       category: "法华部",
+      cbetaId: "T0262",
+      satId: "T0262",
     },
     {
       slug: "amitabha-sutra",
@@ -38,6 +44,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "鸠摩罗什",
       summary: "《阿弥陀经》是净土宗根本经典之一，宣说西方极乐世界的殊胜庄严。",
       category: "净土部",
+      cbetaId: "T0366",
+      satId: "T0366",
     },
     {
       slug: "shurangama-sutra",
@@ -47,6 +55,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "般剌密谛",
       summary: "《楞严经》详细阐述如来藏思想与修行方法，被誉为'开悟的楞严'。",
       category: "密教部",
+      cbetaId: "T0945",
+      satId: "T0945",
     },
     {
       slug: "avatamsaka-sutra",
@@ -56,6 +66,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "实叉难陀",
       summary: "《华严经》是华严宗的根本经典，阐述法界缘起、事事无碍的圆融思想。",
       category: "华严部",
+      cbetaId: "T0279",
+      satId: "T0279",
     },
     {
       slug: "platform-sutra",
@@ -65,6 +77,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "法海（集记）",
       summary: "《六祖坛经》是禅宗六祖惠能大师的言行录，是唯一被尊为'经'的中国佛教著作。",
       category: "禅宗部",
+      cbetaId: "T2008",
+      satId: "T2008",
     },
     {
       slug: "vimalakirti-sutra",
@@ -74,6 +88,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "鸠摩罗什",
       summary: "《维摩诘经》以在家居士维摩诘为主角，阐扬大乘佛教的不二法门。",
       category: "经集部",
+      cbetaId: "T0475",
+      satId: "T0475",
     },
 
     // ===== 第一批：完整化现有分类 (6) =====
@@ -85,6 +101,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "康僧铠",
       summary: "《无量寿经》是净土宗根本三经之一，详细叙述法藏比丘发四十八愿、建立极乐世界的因缘。此经篇幅宏大，完整阐述了净土法门的理论根基。",
       category: "净土部",
+      cbetaId: "T0360",
+      satId: "T0360",
     },
     {
       slug: "contemplation-sutra",
@@ -94,6 +112,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "畺良耶舍",
       summary: "《观无量寿佛经》简称《观经》，是净土三经之一。以韦提希夫人的故事为缘起，宣说十六妙观法门，是净土宗观想念佛的重要依据。",
       category: "净土部",
+      cbetaId: "T0365",
+      satId: "T0365",
     },
     {
       slug: "innumerable-meanings-sutra",
@@ -103,6 +123,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "昙摩伽陀耶舍",
       summary: "《无量义经》是法华三部经之一，被认为是《法华经》的开经（序分）。宣说'无量义者，从一法生'的核心理念，阐明诸法实相与方便教化的关系。",
       category: "法华部",
+      cbetaId: "T0276",
+      satId: "T0276",
     },
     {
       slug: "samantabhadra-meditation-sutra",
@@ -112,6 +134,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "昙摩蜜多",
       summary: "《观普贤菩萨行法经》是法华三部经的结经，宣说通过观想普贤菩萨、忏悔业障而证入法华三昧的修行方法。",
       category: "法华部",
+      cbetaId: "T0277",
+      satId: "T0277",
     },
     {
       slug: "xin-xin-ming",
@@ -121,6 +145,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "僧璨",
       summary: "《信心铭》是禅宗三祖僧璨大师的代表作，以四言偈颂形式阐述禅宗见性思想。'至道无难，唯嫌拣择'开篇即直指人心，是禅宗最重要的早期文献之一。",
       category: "禅宗部",
+      cbetaId: "T2010",
+      satId: "T2010",
     },
     {
       slug: "song-of-enlightenment",
@@ -130,6 +156,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "永嘉玄觉",
       summary: "《证道歌》是唐代永嘉玄觉禅师的开悟之作，以七言诗体阐述禅宗顿悟法门。语言通俗有力，'梦里明明有六趣，觉后空空无大千'等名句流传极广。",
       category: "禅宗部",
+      cbetaId: "T2014",
+      satId: "T2014",
     },
 
     // ===== 第二批：新增分类 (6) =====
@@ -141,6 +169,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "昙无谶",
       summary: "《大般涅槃经》是大乘涅槃部核心经典，以佛陀涅槃前的最后教示为背景，宣说'一切众生悉有佛性'、'涅槃常乐我净'等核心教义，对中国佛教佛性思想影响深远。",
       category: "涅槃部",
+      cbetaId: "T0374",
+      satId: "T0374",
     },
     {
       slug: "buddhas-last-teaching",
@@ -150,6 +180,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "鸠摩罗什",
       summary: "《佛遗教经》是佛陀在娑罗双树下涅槃前对弟子的最后嘱托。篇幅简短但精义深广，涵盖戒律、禅修、智慧等修行的核心要点，是出家众必诵经典。",
       category: "涅槃部",
+      cbetaId: "T0389",
+      satId: "T0389",
     },
     {
       slug: "forty-two-chapters",
@@ -159,6 +191,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "摄摩腾、竺法兰",
       summary: "《四十二章经》被认为是中国翻译的第一部佛经，以四十二段简短经文体裁汇编佛说精华。内容涵盖出家、断欲、精进、忍辱等基本修行原则，文字古朴简练。",
       category: "阿含部",
+      cbetaId: "T0784",
+      satId: "T0784",
     },
     {
       slug: "turning-the-dharma-wheel",
@@ -168,6 +202,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "安世高",
       summary: "《转法轮经》记载佛陀在鹿野苑初次说法的内容——四圣谛、八正道、中道。这是佛陀成道后的第一次开示，标志着佛法的正式诞生，是最核心的原始佛教经典。",
       category: "阿含部",
+      cbetaId: "T0109",
+      satId: "T0109",
     },
     {
       slug: "mula-madhyamaka-karika",
@@ -177,6 +213,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "鸠摩罗什",
       summary: "《中论》是龙树菩萨的代表作，以'八不中道'（不生不灭、不常不断、不一不异、不来不去）为核心，系统阐述缘起性空的中观哲学。被誉为大乘佛教'八宗共祖'的奠基之作。",
       category: "中观/唯识部",
+      cbetaId: "T1564",
+      satId: "T1564",
     },
     {
       slug: "awakening-of-faith",
@@ -186,6 +224,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "真谛",
       summary: "《大乘起信论》是中国佛教最重要的论典之一，以'一心二门'（心真如门与心生灭门）为核心框架，调和如来藏思想与唯识学说，对华严、天台、禅宗均有深远影响。",
       category: "中观/唯识部",
+      cbetaId: "T1666",
+      satId: "T1666",
     },
 
     // ===== 第三批：扩充经集部 (10) =====
@@ -197,6 +237,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "求那跋陀罗",
       summary: "《楞伽经》是大乘唯识学和如来藏思想的重要经典，以佛陀在楞伽山说法为缘起，阐述唯识无境、如来藏、五法三自性、八识等核心教义。禅宗初祖达摩以此经传付二祖慧可。",
       category: "经集部",
+      cbetaId: "T0670",
+      satId: "T0670",
     },
     {
       slug: "perfect-enlightenment-sutra",
@@ -206,6 +248,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "佛陀多罗",
       summary: "《圆觉经》是大乘了义经典，以十二位菩萨依次向佛陀请问修行方法，系统阐述圆觉妙心、二十五种清净定轮等修行纲领。是禅宗和修行者极为重视的经典。",
       category: "经集部",
+      cbetaId: "T0842",
+      satId: "T0842",
     },
     {
       slug: "medicine-buddha-sutra",
@@ -215,6 +259,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "玄奘",
       summary: "《药师经》宣说药师琉璃光如来的十二大愿，讲述称念药师佛名号可以消灾延寿、消除病苦。药师法门是现世安乐与来世解脱并重的修行法门，深受信众推崇。",
       category: "经集部",
+      cbetaId: "T0450",
+      satId: "T0450",
     },
     {
       slug: "ksitigarbha-sutra",
@@ -224,6 +270,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "实叉难陀",
       summary: "《地藏经》是地藏菩萨信仰的根本经典，宣说地藏菩萨'地狱不空，誓不成佛'的宏大誓愿。以孝道精神为核心，劝人念佛、布施、供养，是中国佛教超荐度亡的重要经典。",
       category: "经集部",
+      cbetaId: "T0412",
+      satId: "T0412",
     },
     {
       slug: "srimaladevi-sutra",
@@ -233,6 +281,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "求那跋陀罗",
       summary: "《胜鬘经》以胜鬘夫人的师子吼开示，阐述一乘思想、如来藏法身、空性等大乘核心教义。在家女性为说法主的独特形式，彰显大乘佛教众生皆可成佛的平等精神。",
       category: "经集部",
+      cbetaId: "T0353",
+      satId: "T0353",
     },
     {
       slug: "samdhinirmocana-sutra",
@@ -242,6 +292,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "玄奘",
       summary: "《解深密经》是唯识宗的根本经典之一，以'三时判教'（有、空、中道）确立了义与不了义的判别标准。系统阐述阿赖耶识、三性三无性等唯识核心理论。",
       category: "经集部",
+      cbetaId: "T0676",
+      satId: "T0676",
     },
     {
       slug: "golden-light-sutra",
@@ -251,6 +303,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "昙无谶",
       summary: "《金光明经》是大乘护国经典，宣说佛法常住、如来寿命无量等深义。'金光明'象征佛法如金坚明、普照世间。此经在古代被视为护国佑民的重要经典，影响遍及东亚各国。",
       category: "经集部",
+      cbetaId: "T0663",
+      satId: "T0663",
     },
     {
       slug: "ullambana-sutra",
@@ -260,6 +314,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "竺法护",
       summary: "《盂兰盆经》是佛教'盂兰盆节'的来源经典，叙述目犍连尊者救度堕入饿鬼道的母亲的故事。弘扬孝道精神，倡导以供养僧众的功德超度父母七世先亡。",
       category: "经集部",
+      cbetaId: "T0685",
+      satId: "T0685",
     },
     {
       slug: "eight-realizations-sutra",
@@ -269,6 +325,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "安世高",
       summary: "《八大人觉经》以八条觉悟纲要为核心（无常、少欲、知足、精进、多闻、布施、出家、大心），是佛教入门修学的精华浓缩。篇幅短小精悍，被列为佛门日常课诵经典。",
       category: "经集部",
+      cbetaId: "T0779",
+      satId: "T0779",
     },
     {
       slug: "brahma-net-sutra",
@@ -278,6 +336,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "鸠摩罗什",
       summary: "《梵网经》是大乘菩萨戒的根本经典，以卢舍那佛的梵网法门为缘起，宣说十重四十八轻菩萨戒。是大乘佛教戒律体系的核心依据，'梵网'喻佛法如梵天宝网、重重无尽。",
       category: "经集部",
+      cbetaId: "T1484",
+      satId: "T1484",
     },
 
     // ===== 第四批：延展般若部 (7) =====
@@ -289,6 +349,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "玄奘",
       summary: "《大般若波罗蜜多经》是般若类经典的总集，共六百卷，涵盖十六会。玄奘大师于唐显庆年间译出，是大乘佛教般若思想的百科全书，以诸法性空贯穿始终。",
       category: "般若部",
+      cbetaId: "T0220",
+      satId: "T0220",
     },
     {
       slug: "maha-prajnaparamita-kumarajiva",
@@ -298,6 +360,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "鸠摩罗什",
       summary: "《摩诃般若波罗蜜经》是鸠摩罗什译出的大品般若经，共二十七卷九十品。与《大般若经》第二会同本异译，般若思想宏富精深，是龙树《大智度论》所释的般若经。",
       category: "般若部",
+      cbetaId: "T0223",
+      satId: "T0223",
     },
     {
       slug: "smaller-prajnaparamita-sutra",
@@ -307,6 +371,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "鸠摩罗什",
       summary: "《小品般若波罗蜜经》是般若经的略本，共十卷二十九品，与《大般若经》第四会同本。篇幅较短但涵盖了般若思想的核心要义，是早期大乘佛教般若思想的代表性经典。",
       category: "般若部",
+      cbetaId: "T0227",
+      satId: "T0227",
     },
     {
       slug: "humane-king-sutra",
@@ -316,6 +382,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "鸠摩罗什",
       summary: "《仁王般若波罗蜜经》是大乘护国经典，宣说般若波罗蜜多能护国土、消灾弭难。古代中国朝廷常请僧讲诵此经以祈国泰民安。",
       category: "般若部",
+      cbetaId: "T0245",
+      satId: "T0245",
     },
     {
       slug: "emission-of-light-sutra",
@@ -325,6 +393,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "无罗叉",
       summary: "《放光般若经》是大品般若的早期汉译本，共二十卷九十品。由无罗叉于西晋元康年间译出，是最早系统传入汉地的般若大经之一，对早期般若学研究影响深远。",
       category: "般若部",
+      cbetaId: "T0221",
+      satId: "T0221",
     },
     {
       slug: "manjusri-prajnaparamita-sutra",
@@ -334,6 +404,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "曼陀罗仙",
       summary: "《文殊师利所说般若经》以文殊师利菩萨为说法主，开示般若波罗蜜多甚深义理，强调一行三昧。对中国禅宗的发展有重要影响，四祖道信曾引用此经。",
       category: "般若部",
+      cbetaId: "T0232",
+      satId: "T0232",
     },
     {
       slug: "six-paramitas-sutra",
@@ -343,6 +415,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "般若",
       summary: "《大乘理趣六波罗蜜多经》共十卷，系统阐述布施、持戒、忍辱、精进、禅定、智慧六波罗蜜多，是大乘菩萨行实践的纲领性经典。由罽宾三藏般若与利言等共同译出。",
       category: "般若部",
+      cbetaId: "T0261",
+      satId: "T0261",
     },
     {
       slug: "zheng-fahua-jing",
@@ -352,6 +426,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "竺法护",
       summary: "《正法华经》是《法华经》最早的汉译本，由月氏三藏竺法护于西晋太康年间译出，共十卷二十七品。鸠摩罗什的《妙法莲华经》即依此为底本重译。",
       category: "法华部",
+      cbetaId: "T0263",
+      satId: "T0263",
     },
     {
       slug: "pratyutpanna-samadhi-sutra",
@@ -361,6 +437,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "支娄迦谶",
       summary: "《般舟三昧经》是净土宗早期重要经典，宣说般舟三昧（佛立三昧）修法——九十日经行不息、一心念佛，能见十方诸佛现前立。是最早传入汉地的弥陀净土经典之一。",
       category: "净土部",
+      cbetaId: "T0418",
+      satId: "T0418",
     },
     {
       slug: "pure-land-upadesa",
@@ -370,6 +448,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "菩提流支",
       summary: "《往生论》是世亲菩萨造、菩提流支译的净土宗根本论典，为五经一论之一。以五念门（礼拜、赞叹、作愿、观察、回向）系统阐述净土修行法门。",
       category: "净土部",
+      cbetaId: "T1524",
+      satId: "T1524",
     },
     {
       slug: "mahavairocana-sutra",
@@ -379,6 +459,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "善无畏",
       summary: "《大日经》是密教根本经典之一，共七卷三十六品，以菩提心为因、大悲为根、方便为究竟为核心纲领，阐述胎藏界曼荼罗法门。由善无畏三藏译出，一行禅师作疏。",
       category: "密教部",
+      cbetaId: "T0848",
+      satId: "T0848",
     },
     {
       slug: "vajrasekhara-sutra",
@@ -388,6 +470,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "不空",
       summary: "《金刚顶经》是密教金刚界根本经典，共三卷，阐扬金刚界五佛、四波罗蜜、十六大菩萨等曼荼罗体系。与《大日经》并称密教两部根本大经，由不空三藏译出。",
       category: "密教部",
+      cbetaId: "T0865",
+      satId: "T0865",
     },
     {
       slug: "susiddhikara-sutra",
@@ -397,6 +481,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "善无畏",
       summary: "《苏悉地羯罗经》共三卷三十七品，详述密教修行中息灾、增益、敬爱、降伏等悉地成就法门。与《大日经》《金刚顶经》合称密教三部经。",
       category: "密教部",
+      cbetaId: "T0893",
+      satId: "T0893",
     },
     {
       slug: "great-compassion-dharani-sutra",
@@ -406,6 +492,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "伽梵达摩",
       summary: "《大悲心陀罗尼经》简称《大悲咒经》，宣说观世音菩萨大悲心陀罗尼（大悲咒）的殊胜功德。大悲咒是汉传佛教流传最广的密咒，日常课诵必备。",
       category: "密教部",
+      cbetaId: "T1060",
+      satId: "T1060",
     },
     {
       slug: "usnisa-vijaya-dharani-sutra",
@@ -415,6 +503,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "佛陀波利",
       summary: "《佛顶尊胜陀罗尼经》以佛顶尊胜陀罗尼为核心，宣说此咒能灭一切恶道苦、增延寿命。唐代广为流传，经幢遍立，是佛顶尊胜法门的根本经典。",
       category: "密教部",
+      cbetaId: "T0967",
+      satId: "T0967",
     },
     {
       slug: "karandavyuha-sutra",
@@ -424,6 +514,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "天息灾",
       summary: "《大乘庄严宝王经》是观世音菩萨信仰的根本经典之一，宣说观世音菩萨种种化身救度众生的事迹，以及六字大明咒唵嘛呢叭咪吽的无量功德。",
       category: "密教部",
+      cbetaId: "T1050",
+      satId: "T1050",
     },
     {
       slug: "mani-dharani-sutra",
@@ -433,6 +525,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "不空",
       summary: "《宝箧印陀罗尼经》宣说宝箧印陀罗尼的无量功德，谓书写、读诵此经及咒置于塔中，即等同于九十九百千万俱胝如来全身舍利。",
       category: "密教部",
+      cbetaId: "T1022A",
+      satId: "T1022A",
     },
     {
       slug: "amitayus-dharani-sutra",
@@ -442,6 +536,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "法天",
       summary: "此经宣说无量寿决定光明王如来陀罗尼的功德，称念此咒可增延寿命、消除夭横。是佛教延生法门的重要经典。",
       category: "密教部",
+      cbetaId: "T0937",
+      satId: "T0937",
     },
     {
       slug: "samantabhadra-vows",
@@ -451,6 +547,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "般若",
       summary: "《普贤行愿品》是华严经的最后一品，由罽宾三藏般若译出（四十卷本），以普贤菩萨十大愿王——礼敬诸佛、称赞如来、广修供养、忏悔业障等——为修行总纲。是净土五经之一。",
       category: "华严部",
+      cbetaId: "T0293",
+      satId: "T0293",
     },
     {
       slug: "tathagata-inconceivable-state-sutra",
@@ -460,6 +558,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "实叉难陀",
       summary: "《大方广如来不思议境界经》宣说如来不可思议的智慧境界，阐述十方诸佛刹土、菩萨修行法门，是华严类经典的组成部分。",
       category: "华严部",
+      cbetaId: "T0301",
+      satId: "T0301",
     },
     {
       slug: "ten-stages-sutra",
@@ -469,6 +569,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "尸罗达摩",
       summary: "《十地经》阐述菩萨十地（欢喜地、离垢地、发光地、焰慧地、难胜地、现前地、远行地、不动地、善慧地、法云地）的修行次第与境界，是华严思想中菩萨阶位论的核心内容。",
       category: "华严部",
+      cbetaId: "T0287",
+      satId: "T0287",
     },
     {
       slug: "dushi-pin-jing",
@@ -478,6 +580,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "竺法护",
       summary: "《度世品经》是《华严经·离世间品》的异译本，由竺法护于西晋太康年间译出。宣说菩萨的种种行门，为早期华严类经典的珍贵文献。",
       category: "华严部",
+      cbetaId: "T0292",
+      satId: "T0292",
     },
     {
       slug: "adornment-of-bodhicitta-sutra",
@@ -487,6 +591,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "鸠摩罗什",
       summary: "《佛说庄严菩提心经》宣说菩提心的殊胜功德与修行方法，是华严类经典中关于发菩提心的专门论述。",
       category: "华严部",
+      cbetaId: "T0307",
+      satId: "T0307",
     },
     {
       slug: "sudden-enlightenment-essentials",
@@ -505,6 +611,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "希运（裴休集）",
       summary: "《传心法要》是黄檗希运禅师的法语集，由裴休辑录。以直下无心为核心，强调即心是佛，语言峻烈直接，是临济宗最重要的早期思想文献之一。",
       category: "禅宗部",
+      cbetaId: "T2012A",
+      satId: "T2012A",
     },
     {
       slug: "record-of-linji",
@@ -514,6 +622,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "义玄",
       summary: "《临济录》是临济宗开祖义玄禅师的语录，以喝、棒等机锋著称，提出无位真人、四料简、四宾主等核心禅法。是临济宗最重要的宗典。",
       category: "禅宗部",
+      cbetaId: "T1985",
+      satId: "T1985",
     },
     {
       slug: "record-of-dongshan",
@@ -532,6 +642,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "无门慧开",
       summary: "《无门关》是宋代无门慧开禅师编集的禅宗公案集，收录四十八则古德公案。每则公案后附有评唱与颂偈，与《碧岩录》并称禅门两大公案奇书。",
       category: "禅宗部",
+      cbetaId: "T2005",
+      satId: "T2005",
     },
     {
       slug: "blue-cliff-record",
@@ -541,6 +653,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "圜悟克勤",
       summary: "《碧岩录》是宋代圜悟克勤禅师对雪窦重显《颂古百则》的评唱。以百则古则公案为核心，文字精妙、禅机深邃，被誉为宗门第一书。",
       category: "禅宗部",
+      cbetaId: "T2003",
+      satId: "T2003",
     },
     {
       slug: "transmission-of-the-lamp",
@@ -550,6 +664,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "道原",
       summary: "《景德传灯录》是北宋道原禅师编撰的禅宗史传，共三十卷，收录自过去七佛至法眼宗法嗣共一千七百余人的传法机缘。是禅宗最重要的灯录之一。",
       category: "禅宗部",
+      cbetaId: "T2076",
+      satId: "T2076",
     },
     {
       slug: "essentials-of-five-lamps",
@@ -568,6 +684,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "宗密",
       summary: "《禅源诸诠集都序》是圭峰宗密禅师的代表作，将当时所有禅门流派归纳为三宗（息妄修心宗、泯绝无寄宗、直显心性宗），与三种教相配对，旨在会通禅教。",
       category: "禅宗部",
+      cbetaId: "T2015",
+      satId: "T2015",
     },
     {
       slug: "ten-good-karma-sutra",
@@ -577,6 +695,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "实叉难陀",
       summary: "《十善业道经》宣说不杀生、不偷盗、不邪淫、不妄语、不两舌、不恶口、不绮语、不贪欲、不嗔恚、不邪见十善业道，是大乘佛教人天乘的伦理基础，也是菩萨戒的根本。",
       category: "经集部",
+      cbetaId: "T0600",
+      satId: "T0600",
     },
     {
       slug: "hundred-parables-sutra",
@@ -586,6 +706,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "求那毗地",
       summary: "《百喻经》是古印度僧伽斯那撰、求那毗地译的寓言经典，以九十八则生动比喻阐发佛教义理。语言通俗幽默、寓意深远，鲁迅曾出资翻印流通。",
       category: "经集部",
+      cbetaId: "T0209",
+      satId: "T0209",
     },
     {
       slug: "purifying-karmic-obstacles-sutra",
@@ -595,6 +717,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "鸠摩罗什",
       summary: "《佛说净业障经》宣说以忏悔、诵经、持咒等方法净除业障，阐明一切业障皆由心生、心净则业障自除的要义。",
       category: "经集部",
+      cbetaId: "T1494",
+      satId: "T1494",
     },
     {
       slug: "contemplation-of-mind-ground-sutra",
@@ -604,6 +728,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "般若",
       summary: "《大乘本生心地观经》共八卷十三品，以观心为宗旨，宣说报四恩（父母恩、众生恩、国王恩、三宝恩）、修四无量心等法门。是汉传佛教报恩思想的根本经典。",
       category: "经集部",
+      cbetaId: "T0159",
+      satId: "T0159",
     },
     {
       slug: "sutra-of-filial-piety",
@@ -613,6 +739,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "安世高",
       summary: "《佛说父母恩难报经》是佛陀宣说父母恩重难报的阿含类经典，强调即使以左肩担父、右肩担母经百劫，亦难报答父母深恩。",
       category: "经集部",
+      cbetaId: "T0684",
+      satId: "T0684",
     },
     {
       slug: "eight-auspicious-sutra",
@@ -622,6 +750,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "僧伽婆罗",
       summary: "《佛说八吉祥经》宣说东方八佛的名号功德，称念此八佛名号者能获大利益。是汉传佛教延生消灾的常用经典。",
       category: "经集部",
+      cbetaId: "T0430",
+      satId: "T0430",
     },
     {
       slug: "syama-sutra",
@@ -631,6 +761,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "圣坚",
       summary: "《佛说睒子经》叙述睒子至孝奉养盲父母、感得天帝护佑的本生故事。是佛教关于孝道精神的经典表述，也是佛陀前生行菩萨道的故事之一。",
       category: "经集部",
+      cbetaId: "T0175",
+      satId: "T0175",
     },
     {
       slug: "bathing-monks-sutra",
@@ -640,6 +772,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "安世高",
       summary: "《佛说温室洗浴众僧经》宣说以温室（浴室）供养僧众洗浴的殊胜功德，谓此供养可得七种福报：身体轻便、面目端正、手足柔软等。",
       category: "经集部",
+      cbetaId: "T0701",
+      satId: "T0701",
     },
     {
       slug: "feeding-tigress-sutra",
@@ -649,6 +783,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "法盛",
       summary: "此经叙述佛陀过去生中为王子时，见饿虎欲食幼子，以大悲心投身饲虎的本生故事。是佛教舍身布施精神的极致展现，也是各地舍身饲虎壁画与造像的经典依据。",
       category: "经集部",
+      cbetaId: "T0172",
+      satId: "T0172",
     },
     {
       slug: "building-stupa-sutra",
@@ -658,6 +794,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "地婆诃罗",
       summary: "《佛说造塔功德经》宣说建塔供佛的殊胜功德，即使是童子戏沙作塔，亦能成就菩提因缘。是汉传佛教建寺造塔的理论基础之一。",
       category: "经集部",
+      cbetaId: "T0699",
+      satId: "T0699",
     },
     {
       slug: "protecting-children-sutra",
@@ -667,6 +805,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "佛陀波利",
       summary: "此经宣说长寿灭罪陀罗尼，强调保护童子的法门。是佛教中关于儿童保育、消除堕胎罪业的常用经典，深受信众推崇。",
       category: "经集部",
+      cbetaId: "T1529",
+      satId: "T1529",
     },
     {
       slug: "ending-disasters-sutra",
@@ -676,6 +816,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "支谦",
       summary: "《佛说戒消灾经》宣说受持五戒可以消除各种灾障，以持戒清净为消灾免难的根本方法。是佛教戒律思想通俗化表达的代表性经典。",
       category: "经集部",
+      cbetaId: "T1477",
+      satId: "T1477",
     },
     {
       slug: "parinirvana-sutra-early",
@@ -685,6 +827,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "白法祖",
       summary: "《佛般泥洹经》是佛陀涅槃经的早期汉译本，共二卷，由西晋白法祖译出。属于小乘涅槃经系统，记载佛陀入涅槃前后的经过与最后的教示。",
       category: "涅槃部",
+      cbetaId: "T0005",
+      satId: "T0005",
     },
     {
       slug: "parinirvana-sutra-later",
@@ -694,6 +838,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "若那跋陀罗",
       summary: "《大般涅槃经后分》是《大般涅槃经》的续篇，由唐代若那跋陀罗译出。叙述佛陀入涅槃后荼毗、分舍利、起塔供养等事，是大般涅槃经的补充。",
       category: "涅槃部",
+      cbetaId: "T0377",
+      satId: "T0377",
     },
     {
       slug: "vaipulya-parinirvana-sutra",
@@ -703,6 +849,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "竺法护",
       summary: "《佛说方等般泥洹经》由竺法护于西晋译出，共二卷。以佛陀涅槃前为诸弟子说法的形式，宣说如来法身不灭、涅槃功德等大乘涅槃思想。",
       category: "涅槃部",
+      cbetaId: "T0378",
+      satId: "T0378",
     },
     {
       slug: "four-boys-samadhi-sutra",
@@ -712,6 +860,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "阇那崛多",
       summary: "《四童子三昧经》共三卷，叙述佛陀涅槃前，东方世界四童子（即后来的迦叶、阿难等）前来供养问法的故事。是涅槃类经典中的一部重要典籍。",
       category: "涅槃部",
+      cbetaId: "T0379",
+      satId: "T0379",
     },
     {
       slug: "mahakaruna-pundarika-sutra",
@@ -721,6 +871,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "那连提耶舍",
       summary: "《大悲经》共五卷，以佛陀大悲心为中心，宣说佛陀临涅槃时对诸弟子的最后教诲。强调以慈悲心护念一切众生，感叹如来难遇、佛法难闻。",
       category: "涅槃部",
+      cbetaId: "T0380",
+      satId: "T0380",
     },
     {
       slug: "dirgha-agama",
@@ -730,6 +882,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "佛陀耶舍",
       summary: "《长阿含经》共二十二卷三十经，是汉译四部阿含之一。收录篇幅较长的经典，涵盖佛陀传记、六师外道、世界起源、修行方法等广泛议题。",
       category: "阿含部",
+      cbetaId: "T0001",
+      satId: "T0001",
     },
     {
       slug: "madhyama-agama",
@@ -739,6 +893,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "瞿昙僧伽提婆",
       summary: "《中阿含经》共六十卷二百二十二经，是四部阿含之一。内容以中等篇幅的经典为主，系统阐述四圣谛、八正道、十二因缘等根本教义。",
       category: "阿含部",
+      cbetaId: "T0026",
+      satId: "T0026",
     },
     {
       slug: "samyukta-agama",
@@ -748,6 +904,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "求那跋陀罗",
       summary: "《杂阿含经》共五十卷，是汉译四部阿含中最早的集成。以短篇经文为主，按事类编次，是研究原始佛教最核心的文献，包含五蕴、六处、缘起、圣谛等根本法义。",
       category: "阿含部",
+      cbetaId: "T0099",
+      satId: "T0099",
     },
     {
       slug: "ekottara-agama",
@@ -757,6 +915,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "瞿昙僧伽提婆",
       summary: "《增一阿含经》共五十一卷，以法数（一至十一）编排经文，是四部阿含之一。收录大量关于佛陀生平、弟子事迹的叙事内容，包含最早的大乘思想萌芽。",
       category: "阿含部",
+      cbetaId: "T0125",
+      satId: "T0125",
     },
     {
       slug: "impermanence-sutra",
@@ -766,6 +926,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "义净",
       summary: "《佛说无常经》是义净三藏于唐大足年间译出的短篇经典，以简洁有力的语言阐述世间无常、人命呼吸间的道理。是汉传佛教常用助念经典之一。",
       category: "阿含部",
+      cbetaId: "T0801",
+      satId: "T0801",
     },
     {
       slug: "noble-eightfold-path-sutra",
@@ -775,6 +937,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "安世高",
       summary: "《佛说八正道经》是安世高译出的早期经典，系统阐述正见、正思惟、正语、正业、正命、正精进、正念、正定八支圣道，是佛教修行实践的根本纲领。",
       category: "阿含部",
+      cbetaId: "T0112",
+      satId: "T0112",
     },
     {
       slug: "dependent-origination-sutra",
@@ -784,6 +948,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "玄奘",
       summary: "《佛说缘起经》是玄奘大师译出的短篇经典，精要阐述十二因缘法——无明缘行、行缘识……生缘老死。是理解佛教缘起论核心义理的根本依据。",
       category: "阿含部",
+      cbetaId: "T0124",
+      satId: "T0124",
     },
     {
       slug: "five-skandhas-emptiness-sutra",
@@ -793,6 +959,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "义净",
       summary: "《佛说五蕴皆空经》是义净译出的短篇经典，阐述色、受、想、行、识五蕴无我、皆空的义理，是原始佛教无我思想的核心表述。",
       category: "阿含部",
+      cbetaId: "T0102",
+      satId: "T0102",
     },
     {
       slug: "seven-places-three-contemplations-sutra",
@@ -802,6 +970,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "安世高",
       summary: "《佛说七处三观经》是安世高所译早期阿含经典之一，以七处善巧、三观的框架分析五蕴、六入等法，是原始佛教禅观修习的重要指导。",
       category: "阿含部",
+      cbetaId: "T0150A",
+      satId: "T0150A",
     },
     {
       slug: "mahanidana-sutra",
@@ -811,6 +981,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "安世高",
       summary: "《佛说人本欲生经》是安世高译出的短篇经典，阐述众生的存在起源于欲爱与执取，是《大因经》（Mahānidāna Sutta）的对应译本，讨论缘起论的深层义理。",
       category: "阿含部",
+      cbetaId: "T0014",
+      satId: "T0014",
     },
     {
       slug: "maha-prajnaparamita-upadesa",
@@ -820,6 +992,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "鸠摩罗什",
       summary: "《大智度论》是龙树菩萨造、鸠摩罗什译的般若经释论，共一百卷。对《摩诃般若波罗蜜经》逐品广释，融汇经律论三藏，是大乘中观学派最重要的百科全书式论典。",
       category: "中观/唯识部",
+      cbetaId: "T1509",
+      satId: "T1509",
     },
     {
       slug: "sata-sastra",
@@ -829,6 +1003,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "鸠摩罗什",
       summary: "《百论》是提婆菩萨造、鸠摩罗什译的中观论典，共二卷十品。以破斥外道、确立正理为宗旨，与《中论》《十二门论》合称三论宗的根本论典。",
       category: "中观/唯识部",
+      cbetaId: "T1569",
+      satId: "T1569",
     },
     {
       slug: "dvadasa-dvara-sastra",
@@ -838,6 +1014,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "鸠摩罗什",
       summary: "《十二门论》是龙树菩萨造、鸠摩罗什译的中观论典，共一卷十二门。从十二个角度阐述缘起性空的义理，是三论宗的三部根本论典之一。",
       category: "中观/唯识部",
+      cbetaId: "T1568",
+      satId: "T1568",
     },
     {
       slug: "yogacarabhumi-sastra",
@@ -847,6 +1025,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "玄奘",
       summary: "《瑜伽师地论》是弥勒菩萨说、无著记录、玄奘译的唯识宗根本论典，共一百卷。系统阐述瑜伽修行十七地，涵盖从凡夫到成佛的全过程，是法相唯识学的百科全书。",
       category: "中观/唯识部",
+      cbetaId: "T1579",
+      satId: "T1579",
     },
     {
       slug: "vijnaptimatratasiddhi",
@@ -856,6 +1036,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "玄奘",
       summary: "《成唯识论》是玄奘大师糅译印度十大论师对《唯识三十颂》的注释而成，共十卷。系统阐述阿赖耶识缘起、三性三无性、转识成智等唯识核心教理，是法相宗的根本论典。",
       category: "中观/唯识部",
+      cbetaId: "T1585",
+      satId: "T1585",
     },
     {
       slug: "trimsika-karika",
@@ -865,6 +1047,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "玄奘",
       summary: "《唯识三十论颂》是世亲菩萨造、玄奘译的唯识宗核心论典，以三十首偈颂精要阐述唯识学说。是《成唯识论》的注释对象，也是唯识学入门的根本颂本。",
       category: "中观/唯识部",
+      cbetaId: "T1586",
+      satId: "T1586",
     },
     {
       slug: "nyayapravesa",
@@ -874,6 +1058,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "玄奘",
       summary: "《因明入正理论》是商羯罗主造、玄奘译的因明学著作，系统阐述真能立、真能破、似能立、似能破、真现量、真比量、似现量、似比量八义。是佛教逻辑学（因明）的入门论典。",
       category: "中观/唯识部",
+      cbetaId: "T1630",
+      satId: "T1630",
     },
     {
       slug: "hundred-dharmas-sastra",
@@ -883,6 +1069,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "玄奘",
       summary: "《大乘百法明门论》是世亲菩萨造、玄奘译的唯识入门论典，以五位百法（心法、心所有法、色法、心不相应行法、无为法）系统归类一切法，是唯识学的纲要性著作。",
       category: "中观/唯识部",
+      cbetaId: "T1614",
+      satId: "T1614",
     },
     {
       slug: "madhyanta-vibhaga",
@@ -892,6 +1080,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "玄奘",
       summary: "《辩中边论》是弥勒菩萨颂、世亲菩萨释、玄奘译的唯识论典，以辨中边——辨别中道与边见为核心，系统阐述唯识实性、三性三无性等要义。",
       category: "中观/唯识部",
+      cbetaId: "T1600",
+      satId: "T1600",
     },
     {
       slug: "mahayana-samgraha",
@@ -901,6 +1091,8 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "玄奘",
       summary: "《摄大乘论》是无著菩萨造、玄奘译的唯识宗核心论典，以十殊胜语统摄大乘佛法纲要，系统阐述阿赖耶识、三性、唯识观等核心义理。",
       category: "中观/唯识部",
+      cbetaId: "T1594",
+      satId: "T1594",
     },
     {
       slug: "buddhabhumi-sastra",
@@ -910,5 +1102,7 @@ export const sutraData: (typeof sutras.$inferInsert)[] = [
       translator: "玄奘",
       summary: "《佛地经论》是亲光菩萨造、玄奘译的唯识论典，注释《佛地经》，阐述佛地境界、四智菩提、清净法界等唯识学的究竟教义。",
       category: "中观/唯识部",
+      cbetaId: "T1530",
+      satId: "T1530",
     },
 ];

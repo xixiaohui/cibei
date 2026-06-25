@@ -135,6 +135,8 @@ Functions
 * Filter by Canon
 * Read Original Text
 * Compare Versions
+* CBETA 全文链接
+* SAT 全文链接
 
 Examples
 
@@ -386,6 +388,8 @@ dynasty
 translator
 summary
 content
+cbeta_id
+sat_id
 created_at
 
 ## glossary

@@ -9,6 +9,8 @@ export const sutras = pgTable("sutras", {
   translator: text("translator"),
   summary: text("summary"),
   category: text("category"),
+  cbetaId: text("cbeta_id"),
+  satId: text("sat_id"),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
 });
 

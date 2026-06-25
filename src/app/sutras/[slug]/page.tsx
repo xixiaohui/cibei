@@ -9,6 +9,7 @@ import { SutraReader } from "@/components/sutra/sutra-reader";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ShareButton } from "@/components/shared/share-button";
+import { ExternalLink } from "lucide-react";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -67,11 +68,39 @@ export default async function SutraDetailPage({ params }: SutraDetailPageProps) 
         <div className="flex flex-wrap gap-2 mb-4 items-center">
           {sutra.category && <Badge variant="secondary">{sutra.category}</Badge>}
           {sutra.dynasty && <Badge variant="outline">{sutra.dynasty}</Badge>}
+          {sutra.translator && <Badge variant="outline">{sutra.translator}译</Badge>}
           <div className="ml-auto">
             <ShareButton type="sutra" slug={slug} />
           </div>
-          {sutra.translator && <Badge variant="outline">{sutra.translator}译</Badge>}
         </div>
+
+        {/* External full-text links */}
+        {(sutra.cbetaId || sutra.satId) && (
+          <div className="flex flex-wrap gap-3 mb-4">
+            {sutra.cbetaId && (
+              <a
+                href={`https://cbetaonline.dila.edu.tw/zh/${sutra.cbetaId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm text-accent hover:underline"
+              >
+                <ExternalLink className="h-3.5 w-3.5" />
+                CBETA 全文
+              </a>
+            )}
+            {sutra.satId && (
+              <a
+                href={`https://21dzk.l.u-tokyo.ac.jp/SAT/${sutra.satId}.html`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm text-accent hover:underline"
+              >
+                <ExternalLink className="h-3.5 w-3.5" />
+                SAT 全文
+              </a>
+            )}
+          </div>
+        )}
         {sutra.summary && (
           <p className="text-muted-foreground max-w-2xl">{sutra.summary}</p>
         )}
