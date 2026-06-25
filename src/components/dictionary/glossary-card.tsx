@@ -14,8 +14,8 @@ export function GlossaryCard({ slug, term, termEn, termSanskrit, definition }: G
     <Link href={`/dictionary/${slug}`}>
       <Card className="h-full hover:border-accent/30 transition-colors">
         <CardHeader>
-          <div className="flex items-baseline gap-2">
-            <CardTitle className="text-2xl font-serif">{term}</CardTitle>
+          <div className="flex items-baseline gap-2 flex-wrap">
+            <CardTitle className="text-lg md:text-xl font-[family-name:var(--font-serif)]">{term}</CardTitle>
             {termSanskrit && (
               <span className="text-sm text-muted-foreground">{termSanskrit}</span>
             )}

@@ -21,7 +21,7 @@ export function FeaturedSection({
     <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 border-t border-border">
       <div className="flex items-end justify-between mb-8">
         <div>
-          <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{title}</h2>
           <p className="text-muted-foreground mt-2">{description}</p>
         </div>
         <Link

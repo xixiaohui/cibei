@@ -41,7 +41,7 @@ export default async function StoryDetailPage({ params }: StoryDetailPageProps) 
 
       {/* Story Header */}
       <div className="mb-10">
-        <div className="flex items-center gap-3 mb-3">
+        <div className="flex items-center gap-3 mb-3 flex-wrap">
           <Badge>{story.category}</Badge>
           {story.sourceSutra && (
             <span className="text-sm text-muted-foreground">
@@ -75,7 +75,7 @@ export default async function StoryDetailPage({ params }: StoryDetailPageProps) 
       {story.moral && (
         <>
           <Separator className="my-10" />
-          <div className="rounded-lg border border-accent/20 bg-accent-soft/50 p-6">
+          <div className="rounded-lg border border-accent/20 bg-accent-soft/50 p-4 md:p-6">
             <h2 className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
               故事寓意
             </h2>

@@ -35,7 +35,7 @@ export default async function StoriesPage({ searchParams }: StoriesPageProps) {
       <Breadcrumb items={[{ label: "佛经故事" }]} />
 
       <div className="mb-10">
-        <h1 className="text-4xl font-bold tracking-tight mb-3">佛经故事</h1>
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">佛经故事</h1>
         <p className="text-lg text-muted-foreground max-w-2xl">
           佛教经典中蕴含着大量富有哲理和教育意义的故事。通过生动的叙事，领悟佛法智慧。
         </p>

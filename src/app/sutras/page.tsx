@@ -37,7 +37,7 @@ export default async function SutrasPage({ searchParams }: SutrasPageProps) {
       <Breadcrumb items={[{ label: "经典库" }]} />
 
       <div className="mb-10">
-        <h1 className="text-4xl font-bold tracking-tight mb-3">经典库</h1>
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">经典库</h1>
         <p className="text-lg text-muted-foreground max-w-2xl">
           深入经藏，智慧如海。浏览大乘佛教核心经典，阅读原文，对比版本。
         </p>

@@ -6,7 +6,7 @@ export function HomeHero() {
   return (
     <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-32">
       <div className="max-w-3xl">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 font-[family-name:var(--font-serif)]">
+        <h1 className="text-4xl md:text-7xl font-bold tracking-tight mb-6 font-[family-name:var(--font-serif)]">
           慈悲空间
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">

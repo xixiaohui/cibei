@@ -42,7 +42,7 @@ export default async function GlossaryDetailPage({ params }: GlossaryDetailPageP
 
       {/* Term Header */}
       <div className="mb-10">
-        <div className="flex items-start justify-between gap-4 mb-3">
+        <div className="flex items-start justify-between gap-4 mb-3 flex-wrap">
           <h1 className="text-4xl font-bold font-[family-name:var(--font-serif)]">
             {term.term}
           </h1>

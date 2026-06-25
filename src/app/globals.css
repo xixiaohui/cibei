@@ -135,6 +135,11 @@
 /* Serif for sutra content */
 .sutra-content {
   font-family: var(--font-noto-serif-sc);
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 2;
+}
+@media (min-width: 768px) {
+  .sutra-content {
+    font-size: 1.2rem;
+  }
 }

@@ -32,7 +32,7 @@ export default async function DictionaryPage({ searchParams }: DictionaryPagePro
       <Breadcrumb items={[{ label: "佛学词典" }]} />
 
       <div className="mb-10">
-        <h1 className="text-4xl font-bold tracking-tight mb-3">佛学词典</h1>
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">佛学词典</h1>
         <p className="text-lg text-muted-foreground max-w-2xl">
           探索佛学术语的精确定义。每个词条包含中文释义、梵文原文和英文对应。
         </p>

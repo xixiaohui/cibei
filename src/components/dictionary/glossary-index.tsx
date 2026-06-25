@@ -23,7 +23,7 @@ export function GlossaryIndex({ activeLetter }: { activeLetter?: string }) {
     <div className="flex flex-wrap gap-1.5 mb-8">
       <button
         onClick={() => setLetter(null)}
-        className={`px-3 py-1.5 text-sm rounded-md transition-colors ${
+        className={`px-3 py-2 min-h-[44px] flex items-center text-sm rounded-md transition-colors ${
           !activeLetter
             ? "bg-foreground text-background"
             : "bg-muted hover:bg-muted-foreground/20"
@@ -35,7 +35,7 @@ export function GlossaryIndex({ activeLetter }: { activeLetter?: string }) {
         <button
           key={letter}
           onClick={() => setLetter(letter)}
-          className={`px-3 py-1.5 text-sm rounded-md transition-colors ${
+          className={`px-3 py-2 min-h-[44px] flex items-center text-sm rounded-md transition-colors ${
             activeLetter === letter
               ? "bg-foreground text-background"
               : "bg-muted hover:bg-muted-foreground/20"

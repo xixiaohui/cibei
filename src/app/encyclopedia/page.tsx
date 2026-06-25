@@ -35,7 +35,7 @@ export default async function EncyclopediaPage({ searchParams }: EncyclopediaPag
       <Breadcrumb items={[{ label: "佛学百科" }]} />
 
       <div className="mb-10">
-        <h1 className="text-4xl font-bold tracking-tight mb-3">佛学百科</h1>
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">佛学百科</h1>
         <p className="text-lg text-muted-foreground max-w-2xl">
           探索佛学的广阔世界——从历史人物到宗派传承，从经典要义到历史事件。
         </p>
