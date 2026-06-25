@@ -11,11 +11,12 @@ import { storyData } from "./seed/stories";
 async function seed() {
   console.log("🌱 Seeding database...");
 
-  // Seed sutras
+  // Seed sutras — delete + re-insert to update all fields including cbeta_id/sat_id
+  await db.delete(sutras);
   for (const s of sutraData) {
-    await db.insert(sutras).values(s).onConflictDoNothing();
+    await db.insert(sutras).values(s);
   }
-  console.log(`  ✓ Inserted ${sutraData.length} sutras`);
+  console.log(`  ✓ Seeded ${sutraData.length} sutras`);
 
   // Seed glossary
   for (const g of glossaryData) {

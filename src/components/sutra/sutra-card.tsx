@@ -20,15 +20,23 @@ export function SutraCard({
 }: SutraCardProps) {
   return (
     <Link href={`/sutras/${slug}`}>
-      <Card className="h-full hover:border-accent/30 transition-colors relative">
+      <Card className="h-full hover:border-accent/30 transition-colors">
         <CardHeader>
-          <div className="flex items-start justify-between gap-2">
+          <div className="flex items-start justify-between gap-2 mb-1">
             <CardTitle className="text-lg leading-snug">{title}</CardTitle>
-            {category && (
-              <Badge variant="secondary" className="shrink-0 text-xs">
-                {category}
-              </Badge>
-            )}
+            <div className="flex items-center gap-1.5 shrink-0">
+              {cbetaId && (
+                <span className="inline-flex items-center gap-0.5 text-[10px] text-accent bg-accent-soft rounded-full px-1.5 py-0.5">
+                  <ExternalLink className="h-2.5 w-2.5" />
+                  全文
+                </span>
+              )}
+              {category && (
+                <Badge variant="secondary" className="text-xs">
+                  {category}
+                </Badge>
+              )}
+            </div>
           </div>
           <CardDescription className="line-clamp-2 text-sm">
             {dynasty && translator ? `${dynasty} · ${translator}译` : summary}
@@ -37,15 +45,6 @@ export function SutraCard({
             <p className="text-sm text-muted-foreground line-clamp-2 mt-2">
               {summary}
             </p>
-          )}
-          {/* CBETA indicator */}
-          {cbetaId && (
-            <div className="absolute bottom-3 right-3">
-              <span className="inline-flex items-center gap-1 text-[10px] text-accent/60 bg-accent/5 rounded-full px-2 py-0.5">
-                <ExternalLink className="h-2.5 w-2.5" />
-                全文
-              </span>
-            </div>
           )}
         </CardHeader>
       </Card>
