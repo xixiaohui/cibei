@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { getAllSutras, getSutraCategories } from "@/lib/sutras";
 import { SutraCard } from "@/components/sutra/sutra-card";
 import { SutraCategoryFilter } from "@/components/sutra/sutra-category-filter";
+import { SutraExternalFilter } from "@/components/sutra/sutra-external-filter";
 import { Pagination } from "@/components/shared/pagination";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { EmptyState } from "@/components/shared/empty-state";
@@ -17,15 +18,16 @@ export const metadata: Metadata = generateSeo({
 });
 
 interface SutrasPageProps {
-  searchParams: Promise<{ category?: string; page?: string; pageSize?: string }>;
+  searchParams: Promise<{ category?: string; page?: string; pageSize?: string; external?: string }>;
 }
 
 export default async function SutrasPage({ searchParams }: SutrasPageProps) {
-  const { category, page: pageStr, pageSize: pageSizeStr } = await searchParams;
+  const { category, page: pageStr, pageSize: pageSizeStr, external } = await searchParams;
+  const hasExternal = external === "1";
   const page = Math.max(1, parseInt(pageStr || "1", 10) || 1);
   const pageSize = parseInt(pageSizeStr || String(DEFAULT_PAGE_SIZE), 10) || DEFAULT_PAGE_SIZE;
   const [result, categories] = await Promise.all([
-    getAllSutras(category, page, pageSize),
+    getAllSutras(category, page, pageSize, hasExternal || undefined),
     getSutraCategories(),
   ]);
   const { items: sutras, total, totalPages } = result;
@@ -42,7 +44,10 @@ export default async function SutrasPage({ searchParams }: SutrasPageProps) {
       </div>
 
       <Suspense fallback={null}>
-        <SutraCategoryFilter categories={categories} activeCategory={category} />
+        <div className="flex flex-wrap items-center gap-4 mb-8">
+          <SutraCategoryFilter categories={categories} activeCategory={category} />
+          <SutraExternalFilter active={hasExternal} />
+        </div>
       </Suspense>
 
       {sutras.length === 0 ? (

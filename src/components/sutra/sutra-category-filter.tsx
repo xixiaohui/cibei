@@ -23,7 +23,7 @@ export function SutraCategoryFilter({ categories, activeCategory }: CategoryFilt
   }
 
   return (
-    <div className="flex flex-wrap gap-2 mb-8">
+    <div className="flex flex-wrap gap-2">
       <Badge
         variant={!activeCategory ? "default" : "outline"}
         className="cursor-pointer"

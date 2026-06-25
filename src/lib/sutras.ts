@@ -1,14 +1,18 @@
 import { db } from "@/db";
 import { sutras } from "@/db/schema/sutras";
-import { eq, sql, count } from "drizzle-orm";
+import { eq, sql, count, and, isNotNull } from "drizzle-orm";
 import { type PaginatedResult, DEFAULT_PAGE_SIZE } from "@/lib/pagination";
 
 export async function getAllSutras(
   category?: string,
   page = 1,
-  pageSize = DEFAULT_PAGE_SIZE
+  pageSize = DEFAULT_PAGE_SIZE,
+  hasExternal?: boolean
 ): Promise<PaginatedResult<typeof sutras.$inferSelect>> {
-  const where = category ? eq(sutras.category, category) : undefined;
+  const conditions = [];
+  if (category) conditions.push(eq(sutras.category, category));
+  if (hasExternal) conditions.push(isNotNull(sutras.cbetaId));
+  const where = conditions.length > 0 ? and(...conditions) : undefined;
 
   const [{ value: total }] = await db
     .select({ value: count() })
