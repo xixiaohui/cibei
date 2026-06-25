@@ -8,6 +8,7 @@ import { useSession, signOut } from "@/lib/auth-client";
 
 const NAV_ITEMS = [
   { href: "/sutras", label: "经典库" },
+  { href: "/stories", label: "佛经故事" },
   { href: "/dictionary", label: "词典" },
   { href: "/encyclopedia", label: "百科" },
 ] as const;

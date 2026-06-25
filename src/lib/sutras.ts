@@ -1,12 +1,35 @@
 import { db } from "@/db";
 import { sutras } from "@/db/schema/sutras";
-import { eq, sql } from "drizzle-orm";
+import { eq, sql, count } from "drizzle-orm";
+import { type PaginatedResult, DEFAULT_PAGE_SIZE } from "@/lib/pagination";
 
-export async function getAllSutras(category?: string) {
-  if (category) {
-    return db.select().from(sutras).where(eq(sutras.category, category)).orderBy(sutras.title);
-  }
-  return db.select().from(sutras).orderBy(sutras.title);
+export async function getAllSutras(
+  category?: string,
+  page = 1,
+  pageSize = DEFAULT_PAGE_SIZE
+): Promise<PaginatedResult<typeof sutras.$inferSelect>> {
+  const where = category ? eq(sutras.category, category) : undefined;
+
+  const [{ value: total }] = await db
+    .select({ value: count() })
+    .from(sutras)
+    .where(where);
+
+  const items = await db
+    .select()
+    .from(sutras)
+    .where(where)
+    .orderBy(sutras.title)
+    .limit(pageSize)
+    .offset((page - 1) * pageSize);
+
+  return {
+    items,
+    total,
+    page,
+    pageSize,
+    totalPages: Math.ceil(total / pageSize),
+  };
 }
 
 export async function getSutraBySlug(slug: string) {

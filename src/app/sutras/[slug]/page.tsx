@@ -8,6 +8,7 @@ import { SutraToc } from "@/components/sutra/sutra-toc";
 import { SutraReader } from "@/components/sutra/sutra-reader";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { ShareButton } from "@/components/shared/share-button";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -63,9 +64,12 @@ export default async function SutraDetailPage({ params }: SutraDetailPageProps) 
         {sutra.titleEn && (
           <p className="text-lg text-muted-foreground mb-4">{sutra.titleEn}</p>
         )}
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-2 mb-4 items-center">
           {sutra.category && <Badge variant="secondary">{sutra.category}</Badge>}
           {sutra.dynasty && <Badge variant="outline">{sutra.dynasty}</Badge>}
+          <div className="ml-auto">
+            <ShareButton type="sutra" slug={slug} />
+          </div>
           {sutra.translator && <Badge variant="outline">{sutra.translator}译</Badge>}
         </div>
         {sutra.summary && (

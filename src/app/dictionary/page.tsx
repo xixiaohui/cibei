@@ -2,9 +2,11 @@ import { Suspense } from "react";
 import { getAllGlossaryTerms } from "@/lib/glossary";
 import { GlossaryCard } from "@/components/dictionary/glossary-card";
 import { GlossaryIndex } from "@/components/dictionary/glossary-index";
+import { Pagination } from "@/components/shared/pagination";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { EmptyState } from "@/components/shared/empty-state";
 import { BookOpen } from "lucide-react";
+import { DEFAULT_PAGE_SIZE } from "@/lib/pagination";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -15,12 +17,15 @@ export const metadata: Metadata = generateSeo({
 });
 
 interface DictionaryPageProps {
-  searchParams: Promise<{ letter?: string }>;
+  searchParams: Promise<{ letter?: string; page?: string; pageSize?: string }>;
 }
 
 export default async function DictionaryPage({ searchParams }: DictionaryPageProps) {
-  const { letter } = await searchParams;
-  const terms = await getAllGlossaryTerms(letter);
+  const { letter, page: pageStr, pageSize: pageSizeStr } = await searchParams;
+  const page = Math.max(1, parseInt(pageStr || "1", 10) || 1);
+  const pageSize = parseInt(pageSizeStr || String(DEFAULT_PAGE_SIZE), 10) || DEFAULT_PAGE_SIZE;
+  const result = await getAllGlossaryTerms(letter, page, pageSize);
+  const { items: terms, total, totalPages } = result;
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
@@ -49,6 +54,10 @@ export default async function DictionaryPage({ searchParams }: DictionaryPagePro
             <GlossaryCard key={t.id} {...t} />
           ))}
         </div>
+      )}
+
+      {totalPages > 1 && (
+        <Pagination page={page} pageSize={pageSize} totalPages={totalPages} total={total} />
       )}
     </div>
   );

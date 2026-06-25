@@ -3,6 +3,7 @@ import { getGlossaryBySlug, getAllGlossaryTerms } from "@/lib/glossary";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { RelatedTerms } from "@/components/dictionary/related-terms";
 import { Separator } from "@/components/ui/separator";
+import { ShareButton } from "@/components/shared/share-button";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -27,8 +28,8 @@ export default async function GlossaryDetailPage({ params }: GlossaryDetailPageP
   const term = await getGlossaryBySlug(slug);
   if (!term) notFound();
 
-  // Get all terms for related-terms resolution
-  const allTerms = await getAllGlossaryTerms();
+  // Get all terms for related-terms resolution (fetch all via large pageSize)
+  const { items: allTerms } = await getAllGlossaryTerms(undefined, 1, 10000);
 
   return (
     <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12">
@@ -41,9 +42,12 @@ export default async function GlossaryDetailPage({ params }: GlossaryDetailPageP
 
       {/* Term Header */}
       <div className="mb-10">
-        <h1 className="text-4xl font-bold font-[family-name:var(--font-serif)] mb-3">
-          {term.term}
-        </h1>
+        <div className="flex items-start justify-between gap-4 mb-3">
+          <h1 className="text-4xl font-bold font-[family-name:var(--font-serif)]">
+            {term.term}
+          </h1>
+          <ShareButton type="dictionary" slug={slug} />
+        </div>
         <div className="flex flex-wrap items-baseline gap-3 text-muted-foreground">
           {term.termSanskrit && (
             <span className="text-lg">{term.termSanskrit}</span>

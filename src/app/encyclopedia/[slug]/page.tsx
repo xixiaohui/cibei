@@ -3,6 +3,7 @@ import { getEncyclopediaBySlug } from "@/lib/encyclopedia";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { ShareButton } from "@/components/shared/share-button";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -39,9 +40,12 @@ export default async function EncyclopediaDetailPage({ params }: EncyclopediaDet
 
       {/* Entry Header */}
       <div className="mb-10">
-        <h1 className="text-4xl font-bold tracking-tight mb-3">
-          {entry.title}
-        </h1>
+        <div className="flex items-start justify-between gap-4 mb-3">
+          <h1 className="text-4xl font-bold tracking-tight">
+            {entry.title}
+          </h1>
+          <ShareButton type="encyclopedia" slug={slug} />
+        </div>
         {entry.category && (
           <Badge variant="secondary">{entry.category}</Badge>
         )}

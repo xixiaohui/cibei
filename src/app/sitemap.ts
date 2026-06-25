@@ -6,15 +6,16 @@ import type { MetadataRoute } from "next";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://cebei.space";
 
-  const [sutras, terms, entries] = await Promise.all([
-    getAllSutras(),
-    getAllGlossaryTerms(),
-    getAllEncyclopediaEntries(),
+  const [{ items: sutras }, { items: terms }, { items: entries }] = await Promise.all([
+    getAllSutras(undefined, 1, 10000),
+    getAllGlossaryTerms(undefined, 1, 10000),
+    getAllEncyclopediaEntries(undefined, 1, 10000),
   ]);
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: new Date(), changeFrequency: "daily", priority: 1 },
     { url: `${baseUrl}/sutras`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
+    { url: `${baseUrl}/stories`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/dictionary`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/encyclopedia`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/search`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.5 },

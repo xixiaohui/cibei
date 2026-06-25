@@ -2,9 +2,11 @@ import { Suspense } from "react";
 import { getAllSutras, getSutraCategories } from "@/lib/sutras";
 import { SutraCard } from "@/components/sutra/sutra-card";
 import { SutraCategoryFilter } from "@/components/sutra/sutra-category-filter";
+import { Pagination } from "@/components/shared/pagination";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { EmptyState } from "@/components/shared/empty-state";
 import { BookOpen } from "lucide-react";
+import { DEFAULT_PAGE_SIZE } from "@/lib/pagination";
 import type { Metadata } from "next";
 import { generateSeo } from "@/lib/seo";
 
@@ -15,15 +17,18 @@ export const metadata: Metadata = generateSeo({
 });
 
 interface SutrasPageProps {
-  searchParams: Promise<{ category?: string }>;
+  searchParams: Promise<{ category?: string; page?: string; pageSize?: string }>;
 }
 
 export default async function SutrasPage({ searchParams }: SutrasPageProps) {
-  const { category } = await searchParams;
-  const [sutras, categories] = await Promise.all([
-    getAllSutras(category),
+  const { category, page: pageStr, pageSize: pageSizeStr } = await searchParams;
+  const page = Math.max(1, parseInt(pageStr || "1", 10) || 1);
+  const pageSize = parseInt(pageSizeStr || String(DEFAULT_PAGE_SIZE), 10) || DEFAULT_PAGE_SIZE;
+  const [result, categories] = await Promise.all([
+    getAllSutras(category, page, pageSize),
     getSutraCategories(),
   ]);
+  const { items: sutras, total, totalPages } = result;
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
@@ -52,6 +57,10 @@ export default async function SutrasPage({ searchParams }: SutrasPageProps) {
             <SutraCard key={s.id} {...s} />
           ))}
         </div>
+      )}
+
+      {totalPages > 1 && (
+        <Pagination page={page} pageSize={pageSize} totalPages={totalPages} total={total} />
       )}
     </div>
   );

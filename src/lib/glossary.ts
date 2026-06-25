@@ -1,16 +1,35 @@
 import { db } from "@/db";
 import { glossary } from "@/db/schema/glossary";
-import { eq, ilike } from "drizzle-orm";
+import { eq, ilike, count } from "drizzle-orm";
+import { type PaginatedResult, DEFAULT_PAGE_SIZE } from "@/lib/pagination";
 
-export async function getAllGlossaryTerms(letter?: string) {
-  if (letter) {
-    return db
-      .select()
-      .from(glossary)
-      .where(ilike(glossary.term, `${letter}%`))
-      .orderBy(glossary.term);
-  }
-  return db.select().from(glossary).orderBy(glossary.term);
+export async function getAllGlossaryTerms(
+  letter?: string,
+  page = 1,
+  pageSize = DEFAULT_PAGE_SIZE
+): Promise<PaginatedResult<typeof glossary.$inferSelect>> {
+  const where = letter ? ilike(glossary.term, `${letter}%`) : undefined;
+
+  const [{ value: total }] = await db
+    .select({ value: count() })
+    .from(glossary)
+    .where(where);
+
+  const items = await db
+    .select()
+    .from(glossary)
+    .where(where)
+    .orderBy(glossary.term)
+    .limit(pageSize)
+    .offset((page - 1) * pageSize);
+
+  return {
+    items,
+    total,
+    page,
+    pageSize,
+    totalPages: Math.ceil(total / pageSize),
+  };
 }
 
 export async function getGlossaryBySlug(slug: string) {

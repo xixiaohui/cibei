@@ -2,9 +2,11 @@ import { Suspense } from "react";
 import { getAllEncyclopediaEntries, getEncyclopediaCategories } from "@/lib/encyclopedia";
 import { EncyclopediaCard } from "@/components/encyclopedia/encyclopedia-card";
 import { CategoryNav } from "@/components/encyclopedia/category-nav";
+import { Pagination } from "@/components/shared/pagination";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { EmptyState } from "@/components/shared/empty-state";
 import { Library } from "lucide-react";
+import { DEFAULT_PAGE_SIZE } from "@/lib/pagination";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -15,15 +17,18 @@ export const metadata: Metadata = generateSeo({
 });
 
 interface EncyclopediaPageProps {
-  searchParams: Promise<{ category?: string }>;
+  searchParams: Promise<{ category?: string; page?: string; pageSize?: string }>;
 }
 
 export default async function EncyclopediaPage({ searchParams }: EncyclopediaPageProps) {
-  const { category } = await searchParams;
-  const [entries, categories] = await Promise.all([
-    getAllEncyclopediaEntries(category),
+  const { category, page: pageStr, pageSize: pageSizeStr } = await searchParams;
+  const page = Math.max(1, parseInt(pageStr || "1", 10) || 1);
+  const pageSize = parseInt(pageSizeStr || String(DEFAULT_PAGE_SIZE), 10) || DEFAULT_PAGE_SIZE;
+  const [result, categories] = await Promise.all([
+    getAllEncyclopediaEntries(category, page, pageSize),
     getEncyclopediaCategories(),
   ]);
+  const { items: entries, total, totalPages } = result;
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
@@ -52,6 +57,10 @@ export default async function EncyclopediaPage({ searchParams }: EncyclopediaPag
             <EncyclopediaCard key={e.id} {...e} />
           ))}
         </div>
+      )}
+
+      {totalPages > 1 && (
+        <Pagination page={page} pageSize={pageSize} totalPages={totalPages} total={total} />
       )}
     </div>
   );
