@@ -20,19 +20,34 @@ const externalLinks = [
     desc: "东京大学大藏经全文检索",
   },
   {
-    href: "https://www.buddhistdigitalresourcecenter.org",
-    label: "BDRC 佛教数字资源中心",
-    desc: "藏梵文献数字化与开放获取",
+    href: "https://buddhism.lib.ntu.edu.tw",
+    label: "台大佛学数位图书馆",
+    desc: "最全面的中文佛学期刊与论文索引",
   },
   {
-    href: "https://plato.stanford.edu/search.html?q=buddha",
-    label: "Stanford Encyclopedia",
-    desc: "权威的佛学哲学英文学术条目",
+    href: "https://buddhism.dila.edu.tw",
+    label: "法鼓佛学数位典藏",
+    desc: "CBETA 全文高级检索与辞典整合",
   },
   {
-    href: "https://en.wikipedia.org/wiki/Buddhism",
-    label: "Wikipedia · Buddhism Portal",
-    desc: "开放的佛学知识百科全书",
+    href: "https://suttacentral.net",
+    label: "SuttaCentral 多语佛典",
+    desc: "巴利、梵、汉多语对照早期佛典",
+  },
+  {
+    href: "https://84000.co",
+    label: "84000 佛典传译",
+    desc: "藏文大藏经英译国际学术项目",
+  },
+  {
+    href: "https://gaya.org.tw/library",
+    label: "香光尼众佛学院图书馆",
+    desc: "台湾佛学经论藏书与数位资源",
+  },
+  {
+    href: "https://etext.fgs.org.tw",
+    label: "佛光山电子大藏经",
+    desc: "大正藏、卍续藏全文检索",
   },
 ];
 
