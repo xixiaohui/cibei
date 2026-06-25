@@ -4,6 +4,7 @@ import { getSutraBySlug } from "@/lib/sutras";
 import { getGlossaryBySlug } from "@/lib/glossary";
 import { getEncyclopediaBySlug } from "@/lib/encyclopedia";
 import { getStoryBySlug } from "@/lib/stories";
+import { stripFrontmatter } from "@/lib/mdx";
 import { readFile, writeFile, access } from "fs/promises";
 import path from "path";
 
@@ -22,10 +23,20 @@ async function fetchData(type: string, slug: string) {
     case "sutra": {
       const d = await getSutraBySlug(slug);
       if (!d) return null;
+      // Read MDX content and combine with summary
+      let mdxBody = "";
+      try {
+        const filePath = path.join(process.cwd(), "content", "sutras", `${slug}.mdx`);
+        const raw = await readFile(filePath, "utf-8");
+        mdxBody = stripFrontmatter(raw).trim();
+      } catch {
+        // MDX not found, use summary only
+      }
+      const body = [d.summary, mdxBody].filter(Boolean).join("\n\n");
       return {
         title: d.title,
         subtitle: d.titleEn,
-        body: d.summary || "",
+        body,
         meta: [d.dynasty, d.translator ? `${d.translator}译` : null].filter(Boolean) as string[],
       };
     }

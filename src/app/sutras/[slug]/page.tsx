@@ -3,15 +3,18 @@ import { readFile } from "fs/promises";
 import path from "path";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getSutraBySlug } from "@/lib/sutras";
+import { stripFrontmatter, extractHeadings } from "@/lib/mdx";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { SutraToc } from "@/components/sutra/sutra-toc";
 import { SutraReader } from "@/components/sutra/sutra-reader";
+import { SutraSectionNav } from "@/components/sutra/sutra-section-nav";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ShareButton } from "@/components/shared/share-button";
 import { ExternalLink } from "lucide-react";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
+import type { TocHeading } from "@/lib/mdx";
 
 interface SutraDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -19,7 +22,6 @@ interface SutraDetailPageProps {
 
 export async function generateMetadata({ params }: SutraDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
-  // Validate slug format — only allow lowercase letters, digits, and hyphens
   if (!/^[a-z0-9-]+$/.test(slug)) return { title: "未找到" };
   const sutra = await getSutraBySlug(slug);
   if (!sutra) return { title: "未找到" };
@@ -32,21 +34,45 @@ export async function generateMetadata({ params }: SutraDetailPageProps): Promis
   });
 }
 
+function headingId(text: string): string {
+  return `s-${text
+    .replace(/[^一-鿿\w]/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "")
+    .toLowerCase()}`;
+}
+
 export default async function SutraDetailPage({ params }: SutraDetailPageProps) {
   const { slug } = await params;
-  // Validate slug format — only allow lowercase letters, digits, and hyphens
   if (!/^[a-z0-9-]+$/.test(slug)) notFound();
   const sutra = await getSutraBySlug(slug);
   if (!sutra) notFound();
 
-  // Read MDX file content from disk (server component — fs is available)
+  // Read MDX and process
   let mdxSource: string | null = null;
+  let headings: TocHeading[] = [];
   try {
     const filePath = path.join(process.cwd(), "content", "sutras", `${slug}.mdx`);
-    mdxSource = await readFile(filePath, "utf-8");
+    const raw = await readFile(filePath, "utf-8");
+    headings = extractHeadings(raw);
+    mdxSource = stripFrontmatter(raw);
   } catch {
     // File not found — handled in render
   }
+
+  // Custom components for MDX: add stable IDs to headings
+  const mdxComponents = {
+    h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => {
+      const text = String(props.children || "");
+      const id = headingId(text);
+      return <h2 id={id} {...props} />;
+    },
+    h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => {
+      const text = String(props.children || "");
+      const id = headingId(text);
+      return <h3 id={id} {...props} />;
+    },
+  };
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
@@ -110,19 +136,22 @@ export default async function SutraDetailPage({ params }: SutraDetailPageProps) 
 
       {/* Content: Sidebar + Main */}
       <div className="flex gap-12">
-        {/* Sidebar — TOC */}
+        {/* Sidebar — TOC (server-rendered, no flash) */}
         <aside className="hidden lg:block w-56 shrink-0">
           <div className="sticky top-24">
-            <SutraToc />
+            <SutraToc headings={headings} />
           </div>
         </aside>
 
         {/* Main Content */}
         <div className="flex-1 min-w-0">
           {mdxSource ? (
-            <SutraReader>
-              <MDXRemote source={mdxSource} />
-            </SutraReader>
+            <>
+              <SutraReader>
+                <MDXRemote source={mdxSource} components={mdxComponents} />
+              </SutraReader>
+              <SutraSectionNav />
+            </>
           ) : (
             <p className="text-muted-foreground">经文内容即将上线。</p>
           )}
