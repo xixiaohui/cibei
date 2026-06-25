@@ -92,7 +92,7 @@ export default async function StoryDetailPage({ params }: StoryDetailPageProps) 
       <div className="max-w-none">
         {/* First paragraph — drop cap */}
         {firstParagraph && (
-          <p className="text-2xl leading-[2.1] my-5 font-[family-name:var(--font-serif)]">
+          <p className="text-[22px] leading-[2.1] my-5 font-[family-name:var(--font-serif)]">
             <span className="float-left text-7xl font-bold leading-[0.85] mr-3 mt-1 text-accent font-[family-name:var(--font-serif)]">
               {firstParagraph.charAt(0)}
             </span>
@@ -102,7 +102,7 @@ export default async function StoryDetailPage({ params }: StoryDetailPageProps) 
 
         {/* Rest paragraphs */}
         {restParagraphs.map((paragraph, i) => (
-          <p key={i} className="text-2xl leading-[2.1] my-5 font-[family-name:var(--font-serif)]">
+          <p key={i} className="text-[22px] leading-[2.1] my-5 font-[family-name:var(--font-serif)]">
             {paragraph}
           </p>
         ))}
