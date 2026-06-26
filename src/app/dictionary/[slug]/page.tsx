@@ -6,6 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { ProseReader } from "@/components/shared/prose-reader";
 import { ShareButton } from "@/components/shared/share-button";
 import { FavoriteButton } from "@/components/shared/favorite-button";
+import { isFavorited } from "@/lib/favorites-actions";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -30,6 +31,8 @@ export default async function GlossaryDetailPage({ params }: GlossaryDetailPageP
   const term = await getGlossaryBySlug(slug);
   if (!term) notFound();
 
+  const favorited = await isFavorited("glossary", slug);
+
   // Get all terms for related-terms resolution (fetch all via large pageSize)
   const { items: allTerms } = await getAllGlossaryTerms(undefined, 1, 10000);
 
@@ -48,7 +51,7 @@ export default async function GlossaryDetailPage({ params }: GlossaryDetailPageP
           <h1 className="text-4xl font-bold font-[family-name:var(--font-serif)]">
             {term.term}
           </h1>
-          <FavoriteButton type="glossary" slug={slug} title={term.term} subtitle={term.termSanskrit ?? term.termEn ?? undefined} />
+          <FavoriteButton type="glossary" slug={slug} title={term.term} subtitle={term.termSanskrit ?? term.termEn ?? undefined} initialFavorited={favorited} />
             <ShareButton type="dictionary" slug={slug} />
         </div>
         <div className="flex flex-wrap items-baseline gap-3 text-muted-foreground">

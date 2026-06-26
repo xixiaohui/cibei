@@ -1,11 +1,11 @@
 import { pgTable, uuid, text, timestamp } from "drizzle-orm/pg-core";
-import { users } from "./users";
+import { user } from "./auth";
 
 export const favorites = pgTable("favorites", {
   id: uuid("id").primaryKey().defaultRandom(),
-  userId: uuid("user_id")
+  userId: text("user_id")
     .notNull()
-    .references(() => users.id, { onDelete: "cascade" }),
+    .references(() => user.id, { onDelete: "cascade" }),
   type: text("type").notNull(), // "sutra" | "glossary" | "story"
   slug: text("slug").notNull(),
   title: text("title").notNull(),

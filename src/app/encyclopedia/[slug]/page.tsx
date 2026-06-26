@@ -4,7 +4,9 @@ import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ProseReader } from "@/components/shared/prose-reader";
+import { FavoriteButton } from "@/components/shared/favorite-button";
 import { ShareButton } from "@/components/shared/share-button";
+import { isFavorited } from "@/lib/favorites-actions";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -30,6 +32,8 @@ export default async function EncyclopediaDetailPage({ params }: EncyclopediaDet
   const entry = await getEncyclopediaBySlug(slug);
   if (!entry) notFound();
 
+  const favorited = await isFavorited("encyclopedia", slug);
+
   return (
     <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12">
       <Breadcrumb
@@ -45,7 +49,8 @@ export default async function EncyclopediaDetailPage({ params }: EncyclopediaDet
           <h1 className="text-4xl font-bold tracking-tight">
             {entry.title}
           </h1>
-          <ShareButton type="encyclopedia" slug={slug} />
+          <FavoriteButton type="encyclopedia" slug={slug} title={entry.title} subtitle={entry.category ?? undefined} initialFavorited={favorited} />
+            <ShareButton type="encyclopedia" slug={slug} />
         </div>
         {entry.category && (
           <Badge variant="secondary">{entry.category}</Badge>

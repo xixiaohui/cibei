@@ -7,7 +7,7 @@ import { db } from "@/db";
 import { favorites } from "@/db/schema/favorites";
 import { and, eq } from "drizzle-orm";
 
-export type FavoriteType = "sutra" | "glossary" | "story";
+export type FavoriteType = "sutra" | "glossary" | "story" | "encyclopedia";
 
 async function getUserId() {
   const session = await auth.api.getSession({ headers: await headers() });
@@ -46,6 +46,14 @@ export async function isFavorited(type: FavoriteType, slug: string) {
     .limit(1);
 
   return result.length > 0;
+}
+
+export async function removeFavorite(favoriteId: string) {
+  const userId = await getUserId();
+  if (!userId) return { error: "请先登录" };
+  await db.delete(favorites).where(and(eq(favorites.id, favoriteId), eq(favorites.userId, userId)));
+  revalidatePath("/favorites");
+  return { success: true };
 }
 
 export async function getUserFavorites() {

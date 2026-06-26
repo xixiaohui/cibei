@@ -1,4 +1,4 @@
-export { users } from "./users";
+export { user, session, account, verification } from "./auth";
 export { sutras } from "./sutras";
 export { glossary } from "./glossary";
 export { encyclopedia } from "./encyclopedia";

@@ -7,6 +7,7 @@ import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { EmptyState } from "@/components/shared/empty-state";
+import { RemoveFavoriteButton } from "@/components/shared/remove-favorite-button";
 import { Heart, BookOpen, FileText, ScrollText } from "lucide-react";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
@@ -21,6 +22,7 @@ const TYPE_CONFIG: Record<string, { label: string; icon: typeof Heart; href: (sl
   sutra: { label: "经典", icon: BookOpen, href: (s) => `/sutras/${s}` },
   glossary: { label: "词条", icon: FileText, href: (s) => `/dictionary/${s}` },
   story: { label: "故事", icon: ScrollText, href: (s) => `/stories/${s}` },
+  encyclopedia: { label: "百科", icon: BookOpen, href: (s) => `/encyclopedia/${s}` },
 };
 
 export default async function FavoritesPage() {
@@ -54,26 +56,34 @@ export default async function FavoritesPage() {
             const config = TYPE_CONFIG[item.type];
             const Icon = config?.icon ?? FileText;
             return (
-              <Link key={item.id} href={config?.href(item.slug) ?? "#"}>
-                <Card className="hover:border-accent/30 transition-colors">
-                  <CardHeader>
-                    <div className="flex items-center gap-3">
-                      <Icon className="h-4 w-4 text-muted-foreground shrink-0" />
-                      <Badge variant="secondary" className="text-xs shrink-0">
-                        {config?.label ?? item.type}
-                      </Badge>
-                      <CardTitle className="text-base leading-snug">
-                        {item.title}
-                      </CardTitle>
-                      {item.subtitle && (
-                        <CardDescription className="text-xs shrink-0">
-                          {item.subtitle}
-                        </CardDescription>
-                      )}
-                    </div>
-                  </CardHeader>
-                </Card>
-              </Link>
+              <div key={item.id} className="flex items-stretch gap-0">
+                <Link
+                  href={config?.href(item.slug) ?? "#"}
+                  className="flex-1 min-w-0"
+                >
+                  <Card className="hover:border-accent/30 transition-colors h-full">
+                    <CardHeader>
+                      <div className="flex items-center gap-3">
+                        <Icon className="h-4 w-4 text-muted-foreground shrink-0" />
+                        <Badge variant="secondary" className="text-xs shrink-0">
+                          {config?.label ?? item.type}
+                        </Badge>
+                        <CardTitle className="text-base leading-snug">
+                          {item.title}
+                        </CardTitle>
+                        {item.subtitle && (
+                          <CardDescription className="text-xs shrink-0">
+                            {item.subtitle}
+                          </CardDescription>
+                        )}
+                      </div>
+                    </CardHeader>
+                  </Card>
+                </Link>
+                <div className="flex items-center pl-1">
+                  <RemoveFavoriteButton id={item.id} />
+                </div>
+              </div>
             );
           })}
         </div>

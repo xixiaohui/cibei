@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ShareButton } from "@/components/shared/share-button";
 import { FavoriteButton } from "@/components/shared/favorite-button";
+import { isFavorited } from "@/lib/favorites-actions";
 import { ExternalLink } from "lucide-react";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
@@ -48,6 +49,8 @@ export default async function SutraDetailPage({ params }: SutraDetailPageProps) 
   if (!/^[a-z0-9-]+$/.test(slug)) notFound();
   const sutra = await getSutraBySlug(slug);
   if (!sutra) notFound();
+
+  const favorited = await isFavorited("sutra", slug);
 
   // Read MDX and process
   let mdxSource: string | null = null;
@@ -97,7 +100,7 @@ export default async function SutraDetailPage({ params }: SutraDetailPageProps) 
           {sutra.dynasty && <Badge variant="outline">{sutra.dynasty}</Badge>}
           {sutra.translator && <Badge variant="outline">{sutra.translator}译</Badge>}
           <div className="ml-auto flex items-center gap-1">
-            <FavoriteButton type="sutra" slug={slug} title={sutra.title} subtitle={sutra.category ?? undefined} />
+            <FavoriteButton type="sutra" slug={slug} title={sutra.title} subtitle={sutra.category ?? undefined} initialFavorited={favorited} />
             <ShareButton type="sutra" slug={slug} />
           </div>
         </div>
