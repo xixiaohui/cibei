@@ -5,9 +5,11 @@ import { FeaturedSection } from "@/components/home/featured-section";
 import { getAllSutras } from "@/lib/sutras";
 import { getAllGlossaryTerms } from "@/lib/glossary";
 import { getAllStories } from "@/lib/stories";
+import { getAllEncyclopediaEntries } from "@/lib/encyclopedia";
 import { SutraCard } from "@/components/sutra/sutra-card";
 import { GlossaryCard } from "@/components/dictionary/glossary-card";
 import { StoryCard } from "@/components/story/story-card";
+import { EncyclopediaCard } from "@/components/encyclopedia/encyclopedia-card";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -19,15 +21,17 @@ export const metadata: Metadata = generateSeo({
 });
 
 export default async function HomePage() {
-  const [sutraResult, glossaryResult, storyResult] = await Promise.all([
+  const [sutraResult, storyResult, encyclopediaResult, glossaryResult] = await Promise.all([
     getAllSutras(undefined, 1, 3),
-    getAllGlossaryTerms(undefined, 1, 3),
     getAllStories(undefined, 1, 3),
+    getAllEncyclopediaEntries(undefined, 1, 3),
+    getAllGlossaryTerms(undefined, 1, 3),
   ]);
 
   const displaySutras = sutraResult.items;
-  const displayTerms = glossaryResult.items;
   const displayStories = storyResult.items;
+  const displayEncyclopedia = encyclopediaResult.items;
+  const displayTerms = glossaryResult.items;
 
   return (
     <>
@@ -59,6 +63,19 @@ export default async function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {displayStories.map((s) => (
             <StoryCard key={s.id} {...s} />
+          ))}
+        </div>
+      </FeaturedSection>
+
+      <FeaturedSection
+        title="佛学百科"
+        description="从历史人物到宗派传承，探索佛学的广阔世界"
+        href="/encyclopedia"
+        linkLabel="浏览全部条目"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {displayEncyclopedia.map((e) => (
+            <EncyclopediaCard key={e.id} {...e} />
           ))}
         </div>
       </FeaturedSection>
