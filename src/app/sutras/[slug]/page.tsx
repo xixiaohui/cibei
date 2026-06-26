@@ -11,6 +11,7 @@ import { SutraSectionNav } from "@/components/sutra/sutra-section-nav";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ShareButton } from "@/components/shared/share-button";
+import { FavoriteButton } from "@/components/shared/favorite-button";
 import { ExternalLink } from "lucide-react";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
@@ -95,7 +96,8 @@ export default async function SutraDetailPage({ params }: SutraDetailPageProps) 
           {sutra.category && <Badge variant="secondary">{sutra.category}</Badge>}
           {sutra.dynasty && <Badge variant="outline">{sutra.dynasty}</Badge>}
           {sutra.translator && <Badge variant="outline">{sutra.translator}译</Badge>}
-          <div className="ml-auto">
+          <div className="ml-auto flex items-center gap-1">
+            <FavoriteButton type="sutra" slug={slug} title={sutra.title} subtitle={sutra.category ?? undefined} />
             <ShareButton type="sutra" slug={slug} />
           </div>
         </div>

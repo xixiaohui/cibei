@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Heart, Menu, X } from "lucide-react";
 import { SearchBar } from "./search-bar";
 import { Button } from "@/components/ui/button";
 import { useSession, signOut } from "@/lib/auth-client";
@@ -91,6 +91,14 @@ export function Header() {
                   className="text-xs text-muted-foreground hover:text-foreground"
                 >
                   登录
+                </Button>
+              </Link>
+            )}
+            {/* Favorites icon */}
+            {session?.user && (
+              <Link href="/favorites">
+                <Button variant="ghost" size="icon" className="h-8 w-8" title="我的收藏">
+                  <Heart className="h-4 w-4 text-muted-foreground hover:text-foreground" />
                 </Button>
               </Link>
             )}

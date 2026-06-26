@@ -5,6 +5,7 @@ import { RelatedTerms } from "@/components/dictionary/related-terms";
 import { Separator } from "@/components/ui/separator";
 import { ProseReader } from "@/components/shared/prose-reader";
 import { ShareButton } from "@/components/shared/share-button";
+import { FavoriteButton } from "@/components/shared/favorite-button";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -47,7 +48,8 @@ export default async function GlossaryDetailPage({ params }: GlossaryDetailPageP
           <h1 className="text-4xl font-bold font-[family-name:var(--font-serif)]">
             {term.term}
           </h1>
-          <ShareButton type="dictionary" slug={slug} />
+          <FavoriteButton type="glossary" slug={slug} title={term.term} subtitle={term.termSanskrit ?? term.termEn ?? undefined} />
+            <ShareButton type="dictionary" slug={slug} />
         </div>
         <div className="flex flex-wrap items-baseline gap-3 text-muted-foreground">
           {term.termSanskrit && (

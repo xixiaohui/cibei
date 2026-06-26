@@ -5,6 +5,7 @@ import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ShareButton } from "@/components/shared/share-button";
+import { FavoriteButton } from "@/components/shared/favorite-button";
 import { generateSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -64,6 +65,7 @@ export default async function StoryDetailPage({ params }: StoryDetailPageProps) 
             · 阅读约 {readMinutes} 分钟
           </span>
           <div className="ml-auto">
+            <FavoriteButton type="story" slug={slug} title={story.title} subtitle={story.category} />
             <ShareButton type="story" slug={slug} />
           </div>
         </div>
