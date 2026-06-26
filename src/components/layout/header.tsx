@@ -13,6 +13,8 @@ const NAV_ITEMS = [
   { href: "/stories", label: "佛经故事" },
   { href: "/dictionary", label: "词典" },
   { href: "/encyclopedia", label: "百科" },
+  { href: "/paths", label: "学习路径" },
+  { href: "/timeline", label: "时间线" },
 ] as const;
 
 export function Header() {

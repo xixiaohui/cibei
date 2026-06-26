@@ -6,6 +6,8 @@ const internalLinks = [
   { href: "/stories", label: "佛经故事" },
   { href: "/dictionary", label: "佛学词典" },
   { href: "/encyclopedia", label: "百科" },
+  { href: "/paths", label: "学习路径" },
+  { href: "/timeline", label: "时间线" },
 ];
 
 const externalLinks = [

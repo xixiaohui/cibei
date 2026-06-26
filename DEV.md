@@ -369,6 +369,27 @@ story
 
 ---
 
+## 9. Buddhist Timeline
+
+URL
+
+/timeline
+
+Functions
+
+* 时间线可视化
+* 人物
+* 经典译出
+* 宗派创立
+* 历史事件
+* 圣地
+
+Description
+
+从佛陀涅槃至今的佛教史大事年表，纵览两千五百年佛法传承。以垂直时间线呈现重要人物、经典翻译、宗派创立、历史事件，帮助用户建立佛教历史的时间坐标系。
+
+---
+
 # Database Schema
 
 ## users
