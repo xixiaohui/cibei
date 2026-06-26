@@ -11,6 +11,7 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
+  trustedOrigins: [process.env.BETTER_AUTH_URL!],
   socialProviders: {
     // Reserved for Phase 2+, none in Phase 1
   },
