@@ -23,22 +23,26 @@ export function middleware(request: NextRequest) {
 }
 
 function setCorsHeaders(response: NextResponse, origin: string) {
-  if (origin) {
-    response.headers.set("Access-Control-Allow-Origin", origin);
-  }
+  // No Origin header = same-origin request, no CORS headers needed
+  if (!origin) return;
+
+  response.headers.set("Access-Control-Allow-Origin", origin);
+  response.headers.set("Access-Control-Allow-Credentials", "true");
   response.headers.set(
     "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, OPTIONS"
+    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
   );
   response.headers.set(
     "Access-Control-Allow-Headers",
-    "Content-Type, Authorization, X-Requested-With"
+    "Content-Type, Authorization, X-Requested-With, Accept"
   );
-  response.headers.set("Access-Control-Allow-Credentials", "true");
   response.headers.set(
     "Access-Control-Expose-Headers",
-    "Content-Length, X-Custom-Header"
+    "Content-Length, Content-Type"
   );
+  // CRITICAL: Without Vary: Origin, CDNs may cache a response for
+  // one origin and serve it to another, causing spurious CORS failures.
+  response.headers.set("Vary", "Origin");
 }
 
 export const config = {
