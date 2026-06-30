@@ -48,3 +48,5 @@ next-env.d.ts
 .playwright-mcp/
 *-screenshot.png
 *-snapshot.yml
+
+.vercel
