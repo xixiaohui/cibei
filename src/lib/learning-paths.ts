@@ -16,9 +16,17 @@ export async function getLearningPathBySlug(slug: string) {
 }
 
 export async function getPathSteps(pathId: string) {
-  return db
+  const rows = await db
     .select()
     .from(pathSteps)
     .where(eq(pathSteps.pathId, pathId))
     .orderBy(asc(pathSteps.stepNumber));
+
+  // Deduplicate by stepNumber in case seed was run multiple times.
+  const seen = new Set<number>();
+  return rows.filter((s) => {
+    if (seen.has(s.stepNumber)) return false;
+    seen.add(s.stepNumber);
+    return true;
+  });
 }

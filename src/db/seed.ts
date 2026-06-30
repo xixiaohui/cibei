@@ -47,6 +47,7 @@ async function seed() {
   console.log(`  ✓ Inserted ${timelineData.length} timeline events`);
 
   // Seed learning paths + steps (with dynamic UUID resolution)
+  await db.delete(pathSteps); // Clear steps first to prevent duplicates
   const slugToId: Record<string, string> = {};
   for (const p of learningPathData) {
     const [inserted] = await db
@@ -65,8 +66,7 @@ async function seed() {
     if (!actualPathId) continue;
     await db
       .insert(pathSteps)
-      .values({ ...s, pathId: actualPathId })
-      .onConflictDoNothing();
+      .values({ ...s, pathId: actualPathId });
     stepCount++;
   }
   console.log(`  ✓ Inserted ${stepCount} path steps`);
